@@ -1,0 +1,2 @@
+webpackJsonp([3],{12:function(e,n,o){"use strict";function t(e,n){if(!(e instanceof n))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(n,"__esModule",{value:!0});var a=function e(n){t(this,e),this.el=n,console.log("Sample Module")};n.default=a}});
+//# sourceMappingURL=3.js.map
