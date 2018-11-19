@@ -1,0 +1,541 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+ 
+<html> 
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	
+ 
+<script language="JavaScript" type="text/javascript"> 
+   var g_HttpRelativeWebRoot = "http://www3.weforum.org/fweblive/";
+   var SSContributor = false;
+   var SSForceContributor = false;
+   var SSHideContributorUI = false;
+   var ssUrlPrefix   = "/en/";
+</script> 
+<script id="SSContributorScript" nodeId="2" websiteId="en" layoutType="jsp" language="javascript" type="text/javascript" src="http://www3.weforum.org/fweblive/websites/en/contributor.js"></script> 
+<script id="SSNavigationFunctionsScript" language="javascript" type="text/javascript" src="http://www3.weforum.org/fweblive/websites/en/sitenavigationfunctions.js"></script> 
+<script id="SSNavigationScript" language="javascript" type="text/javascript" src="http://www3.weforum.org/fweblive/websites/en/sitenavigation.js"></script> 
+<script language="JavaScript" type="text/javascript"> 
+   var g_navNode_Path = new Array();
+   
+      g_navNode_Path[0] = '2';
+   
+   var g_ssSourceNodeId = "2";
+   var g_ssSourceSiteId = "en";
+   var g_strLanguageId = "en";
+</script> 
+ 
+<script type="text/javascript" src="http://www3.weforum.org/fweblive/resources/sitestudio/ssajax/ssajax.js"></script> 
+ 
+ 
+	
+	
+ 
+	
+		
+	
+ 
+ 
+ 
+ 
+ 
+ 
+<meta name="Description" content="The World Economic Forum (WEF) is a Geneva-based non-profit organization best known for its Annual Meeting in Davos, Switzerland, the Annual Meeting of New Champions in China (Summer Davos) and the Summit on the Global Agenda in Dubai. It also releases research reports such as the Competitiveness Reports and Risk Reports and engages with its members in sector-specific initiatives."> 
+ 
+ 
+  <script id="ssInfo" type="text/xml" warning="DO NOT MODIFY!"> 
+  <ssinfo>
+    <fragmentinstance id="fragment3" fragmentid="WEFFooter" library="server:FRAG_WEFFooter"><![CDATA[]]></fragmentinstance>
+ 
+    <fragmentinstance id="fragment6" fragmentid="WEFSubscribeBox" library="server:FRAG_WEFSubscribeBox"></fragmentinstance>
+ 
+    <fragmentinstance id="fragment9" fragmentid="WEFPrint" library="server:FRAG_WEFPrint"></fragmentinstance>
+ 
+    <fragmentinstance id="fragment14" fragmentid="WEFFooter" library="server:FRAG_WEFFooter"><![CDATA[]]></fragmentinstance>
+ 
+    <fragmentinstance id="fragment15" fragmentid="WEFSearchBox" library="server:FRAG_SearchBox"><![CDATA[]]></fragmentinstance>
+ 
+    <fragmentinstance id="fragment16" fragmentid="WEFStaticLinks" library="server:FRAG_WEFStaticLinks"></fragmentinstance>
+ 
+    <fragmentinstance id="fragment18" fragmentid="WEFLeftNavigation" library="server:FRAG_WEFLeftNavigation"></fragmentinstance>
+ 
+    <fragmentinstance id="fragment19" fragmentid="WEFHeader_dynamic" library="server:FRAG_Header_Dynamic"><![CDATA[]]></fragmentinstance>
+ 
+    <region id="region1" name="region1" flags="1111111111" metadata="" dccommand="ssIncInlineDynamicConversion(SS_DATAFILE)">
+      <![CDATA[]]>
+ 
+      <element id="region1_element1" name="Content" label="Content" type="1" flags="1111111111111111111111000001111000000000000011110011110000000000">
+        <![CDATA[]]>
+ 
+        <linktoregioncontent createnewxml="true" createnewnative="false" choosemanaged="true" chooselocal="false" choosenone="false"><choosemanagedquerytext corecontentonly="FALSE"><![CDATA[xWebsiteObjectType <Matches> `Data File` <OR> xWebsiteObjectType <Matches> `Native Document`]]></choosemanagedquerytext></linktoregioncontent><objectproperties docname="SS_GENERIC_PROPERTIES_FORM"></objectproperties>
+      </element>
+ 
+      <switchregioncontent createnewxml="true" createnewnative="false" choosemanaged="true" chooselocal="false" choosenone="false"><choosemanagedquerytext corecontentonly="FALSE"><![CDATA[xWebsiteObjectType <Matches> `Data File` <OR> xWebsiteObjectType <Matches> `Native Document`]]></choosemanagedquerytext></switchregioncontent>
+    </region>
+ 
+    <region id="region2" name="region2" flags="1110111100" metadata="" dccommand="ssIncInlineDynamicConversion(SS_DATAFILE)">
+      <![CDATA[]]>
+ 
+      <element id="region2_element1" name="wefHPHintBox" label="wefHPHintBox" type="1" flags="1111111111111111111111000001111000000000000011110011100000000000">
+        <![CDATA[]]>
+ 
+        <linktoregioncontent createnewxml="true" createnewnative="false" choosemanaged="true" chooselocal="false" choosenone="false"><choosemanagedquerytext corecontentonly="FALSE"><![CDATA[xWebsiteObjectType <Matches> `Data File` <OR> xWebsiteObjectType <Matches> `Native Document`]]></choosemanagedquerytext></linktoregioncontent><objectproperties docname="SS_GENERIC_PROPERTIES_FORM"></objectproperties>
+      </element>
+ 
+      <switchregioncontent createnewxml="true" createnewnative="false" choosemanaged="true" chooselocal="false" choosenone="true"><choosemanagedquerytext corecontentonly="FALSE"><![CDATA[xWebsiteObjectType <Matches> `Data File` <OR> xWebsiteObjectType <Matches> `Native Document`]]></choosemanagedquerytext></switchregioncontent>
+    </region>
+ 
+    <region id="region3" name="MainContent" flags="1110111100" metadata="" dccommand="ssIncInlineDynamicConversion(SS_DATAFILE)">
+      <![CDATA[]]>
+ 
+      <element id="region3_element1" name="TopStory" label="Top Story" type="1" flags="1111111111111111111111000001111000000000000011110011100000000000">
+        <![CDATA[]]>
+ 
+        <linktoregioncontent createnewxml="true" createnewnative="false" choosemanaged="true" chooselocal="false" choosenone="false"><choosemanagedquerytext corecontentonly="FALSE"><![CDATA[xWebsiteObjectType <Matches> `Data File` <OR> xWebsiteObjectType <Matches> `Native Document`]]></choosemanagedquerytext></linktoregioncontent><objectproperties docname="SS_GENERIC_PROPERTIES_FORM"></objectproperties>
+      </element>
+ 
+      <element id="region3_element2" name="LeftColumn" label="Left column" type="1" flags="1111111111111111111111000001111000000000000011110011100000000000">
+        <![CDATA[]]>
+ 
+        <linktoregioncontent createnewxml="true" createnewnative="false" choosemanaged="true" chooselocal="false" choosenone="false"><choosemanagedquerytext corecontentonly="FALSE"><![CDATA[xWebsiteObjectType <Matches> `Data File` <OR> xWebsiteObjectType <Matches> `Native Document`]]></choosemanagedquerytext></linktoregioncontent><objectproperties docname="SS_GENERIC_PROPERTIES_FORM"></objectproperties>
+      </element>
+ 
+      <element id="region3_element3" name="CenterColumn" label="Center column" type="1" flags="1111111111111111111111000001111000000000000011110011100000000000">
+        <![CDATA[]]>
+ 
+        <linktoregioncontent createnewxml="true" createnewnative="false" choosemanaged="true" chooselocal="false" choosenone="false"><choosemanagedquerytext corecontentonly="FALSE"><![CDATA[xWebsiteObjectType <Matches> `Data File` <OR> xWebsiteObjectType <Matches> `Native Document`]]></choosemanagedquerytext></linktoregioncontent><objectproperties docname="SS_GENERIC_PROPERTIES_FORM"></objectproperties>
+      </element>
+ 
+      <element id="region3_element4" name="RightColumn" label="Right column" type="1" flags="1111111111111111111111000001111000000000000011110011100000000000">
+        <![CDATA[]]>
+ 
+        <linktoregioncontent createnewxml="true" createnewnative="false" choosemanaged="true" chooselocal="false" choosenone="false"><choosemanagedquerytext corecontentonly="FALSE"><![CDATA[xWebsiteObjectType <Matches> `Data File` <OR> xWebsiteObjectType <Matches> `Native Document`]]></choosemanagedquerytext></linktoregioncontent><objectproperties docname="SS_GENERIC_PROPERTIES_FORM"></objectproperties>
+      </element>
+ 
+      <switchregioncontent createnewxml="true" createnewnative="false" choosemanaged="true" chooselocal="false" choosenone="false"><choosemanagedquerytext corecontentonly="FALSE"><![CDATA[xWebsiteObjectType <Matches> `Data File` <OR> xWebsiteObjectType <Matches> `Native Document`]]></choosemanagedquerytext></switchregioncontent>
+    </region>
+  </ssinfo>
+  </script> 
+ 
+  <title>World Economic Forum - Home</title> 
+  
+  <meta content="MSHTML 6.00.2900.3199" name="GENERATOR" /><!--Global css --> 
+  <link href="http://www3.weforum.org/fweblive/groups/sitestudio/documents/wef_webpage/wef_maincss.css" type="text/css" rel="stylesheet" /> 
+<!--SS_BEGIN_SNIPPET(fragment14,1)--> 
+  <link rel='stylesheet' type='text/css' href='http://www3.weforum.org/fweblive//fragments/weffooter/WEFFooter.css' /><!--SS_END_SNIPPET(fragment14,1)--> 
+ 
+<!--SS_BEGIN_SNIPPET(fragment15,1)--> 
+  <link rel='stylesheet' type='text/css' href='http://www3.weforum.org/fweblive//fragments/wefsearchbox/WEFSearchBox.css' /><!--SS_END_SNIPPET(fragment15,1)--> 
+ 
+<!--SS_BEGIN_SNIPPET(fragment18,1)--> 
+  <link rel='stylesheet' type='text/css' href='http://www3.weforum.org/fweblive//fragments/wefleftnavigation/WEFLeftNavigation.css' /><!--SS_END_SNIPPET(fragment18,1)--> 
+ 
+<!--SS_BEGIN_SNIPPET(fragment19,1)--> 
+  <link rel='stylesheet' type='text/css' href='WEFHeader_dynamic.css' /> 
+  <script language="javascript" id="PrinterFriendly" src="http://www3.weforum.org/fweblive/fragments/wefheader_dynamic/printerfriendly.js" type="text/javascript"> 
+  </script><!--SS_END_SNIPPET(fragment19,1)--> 
+ 
+  <style type="text/css"> 
+  <!--
+ 
+A:link {text-decoration: none}
+A:visited {text-decoration: none}
+A:active {text-decoration: none}
+A:hover {text-decoration: none}
+ 
+ 
+.TopHstTitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #354C70;
+	
+    a:hover {text-decoration: underline;} 
+}
+.TopHstLinks {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #354C70;
+	text-decoration: underline;
+}
+.TitlesHst {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #354C70;
+	a {text-decoration: none; } 
+    a:hover {text-decoration: underline;} 
+}
+.LinksHst {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.RHN_Body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: #666666;
+}
+.THst_Body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: bold;
+	color: #333333;
+}
+.Lateral_Left {
+	background-image: url(imgs/Lateral_left.gif);
+	background-repeat: repeat-y;
+}
+.Lateral_Right {
+	background-image: url(imgs/Lateral_right.gif);
+	background-repeat: repeat-y;
+}
+.TagCloud_1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	color: #666666;
+}
+.TagCloud_2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	color: #333333;
+}
+.TagCloud_3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: bold;
+	color: #999999;
+}
+.TagCloud_4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #666666;
+}
+.TagCloud_5 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	color: #666666;
+}
+.TagCloud_6 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	color: #666666;
+}
+.TagCloud_7 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	color: #666666;
+}
+.TagCloud_8 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: bold;
+	color: #999999;
+}
+.TagCloud_9 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: bold;
+	color: #999999;
+}
+.TagCloud_9 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	color: #999999;
+}
+  body { background-image:url(lateral_bg_home.gif); background-position:top center; background-repeat: repeat-y; background-attachment:fixed; text-align:justify; }
+  -->
+  
+  
+  </style> 
+  
+ 
+</head> 
+ 
+<body> 
+  <!--outerTable begin --> 
+ 
+ 
+ 
+ <center> 
+  <table width="960" cellspacing="0" cellpadding="0" border="0"> 
+    <tbody> 
+      <tr> 
+        <td valign="top" align="left" align="center"> 
+<!--SS_BEGIN_SNIPPET(fragment19,2)--> 
+ 
+ 
+ 
+ 
+<script language="JavaScript" type="text/JavaScript"> 
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+ 
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+ 
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+ 
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script> 
+ 
+ 
+	<script language="javascript"> 
+ 
+			function gId(id)
+				{
+				return document.getElementById(id);
+				}
+			function sm(num, show)
+				{
+						var lnk = gId('lnk' + num);
+						if(!lnk) return false;
+						if(styleOn) lnk.className = styleOn;
+						var objLeft = lnk.parentNode;
+						var objTop = gId('divLevelTop'+iblId);
+						var ssmenu = gId('divSubmenu' + num);
+						if(ssmenu){
+							if(show){var initialTop = objTop.offsetHeight;
+							if(flagTop) initialTop = -ssmenu.offsetHeight;
+							ssmenu.style.left = M_getOffset(objLeft) + 'px';
+							ssmenu.style.top  = (initialTop + M_getOffset(objTop, 'top')) + 'px';}
+							ssmenu.style.visibility = show ? 'visible':'hidden';var oCont = gId('divConteneur');
+							
+							if(oCont){
+								var decalLeft = 2;
+								oCont.style.left = (parseInt(ssmenu.style.left) + decalLeft) + 'px';
+								var decalTop  = flagTop ? -2:2;
+								oCont.style.top  = (parseInt(ssmenu.style.top) + decalTop) + 'px';
+								oCont.style.height = ssmenu.offsetHeight + 'px';
+								oCont.style.width  = ssmenu.offsetWidth + 'px';
+								oCont.style.display = "block";
+								}
+							}
+						}
+						
+						
+			function hm(){
+						for(var i = 1; i<=nbMaxMenu; i++)
+								{
+									var oDiv = gId('divSubmenu'+i);
+									if(oDiv) oDiv.style.visibility = 'hidden';
+									var lnk = gId('lnk'+i);
+										if(lnk)
+											{
+												if(styleOff) lnk.className = styleOff;
+											}
+									}
+									var oCont = gId('divConteneur');
+									if(oCont)
+										{
+										oCont.style.display = "none";
+										}
+							}
+							
+			function M_getOffset(obj, dir){var px = 0;while(obj.tagName!='BODY'){if(dir && dir=='top') px += obj.offsetTop; else px += obj.offsetLeft;obj = obj.offsetParent;}
+			return px;}
+	</script> 
+			
+	<script type="text/javascript"> 
+			nbMaxMenu=9;
+			
+			flagTop=false;
+			iblId='64335';
+			styleOn='L1 S1625 L1over';
+			styleOff='L1 S1625';
+	</script> 
+	
+ 
+ 
+ 
+ 
+ 
+ 
+<table width="960" border="0" cellspacing="0" cellpadding="0"> 
+	<tbody> 
+  <tr> 
+    <td background="banner_background.jpg"> 
+    	<table width="960" border="0" cellspacing="0" cellpadding="0"> 
+      <tr> 
+        <td width="10" rowspan="2">&nbsp;</td> 
+        <td width="100" rowspan="2"> 
+        	<table width="100" border="0" cellspacing="0" cellpadding="0"> 
+            <tr> 
+              <td><img src="http://www3.weforum.org/fweblive/fragments/wefheader_dynamic/img/transparent.gif" width="100" height="10"></td> 
+            </tr> 
+            <tr> 
+              <td><a href="http://www.weforum.org/en/index.htm"><img src="http://www3.weforum.org/fweblive/fragments/wefheader_dynamic/img/transparent.gif" border="0" width="100" height="65"></a></td> 
+            </tr> 
+            <tr> 
+              <td><a href="http://www.weforum.org/en/index.htm"><img src="http://www3.weforum.org/fweblive/fragments/wefheader_dynamic/img/transparent.gif" border="0" width="100" height="45"></a></td> 
+            </tr> 
+        </table></td> 
+        <td width="590" rowspan="2">&nbsp;</td> 
+        <td width="260" valign="top"> 
+        	
+        </td> 
+      </tr> 
+      <tr> 
+        <td align="right" valign="bottom"> 
+        	<table width="260" border="0" cellspacing="0" cellpadding="0"> 
+        		
+        		
+        </table></td> 
+      </tr> 
+      
+      <tr> 
+    			<td colspan="4"> 
+    				
+				  </td> 
+  		</tr> 
+      
+     
+			<tr> 
+				<td colspan="4" > 
+							<table width="960" border="0" cellspacing="0" cellpadding="0"> 
+ 
+              <tr> 
+              	<td width="9" align="left" valign="top" background="http://www3.weforum.org/fweblive/fragments/wefheader_dynamic/img/Bar_bg.gif">&nbsp;</td> 
+                <td rowspan="2" width="941" align="left" valign="middle" background="http://www3.weforum.org/fweblive/fragments/wefheader_dynamic/img/Bar_bg.gif"> 
+							                	<table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+							                  <tr> 
+							                  	
+							                  	<td width="38"><img src="http://www3.weforum.org/fweblive/fragments/wefheader_dynamic/img/transparent.gif" width="38" height="17"></td> 
+							                  	<td width="747" align="left" valign="top"> 
+							                  		<span class="style1"> 
+											            			
+											            		</span> 
+							                  	</td> 
+							                    <td width="45" align="right" valign="bottom"> 
+							                    		
+							                    </td> 
+							                    <td width="1" align="right" valign="top">&nbsp;</td> 
+							                    <td width="103" align="right" valign="bottom"> 
+							                    	
+							                    </td> 
+							                  </tr> 
+							                </table> 
+							   </td> 
+                <td width="9" align="right" valign="top" background="http://www3.weforum.org/fweblive/fragments/wefheader_dynamic/img/Bar_bg.gif">&nbsp;</td> 
+              </tr> 
+              
+							<tr> 
+                <td align="left" valign="top"><img src="http://www3.weforum.org/fweblive/fragments/wefheader_dynamic/img/Bar_Left.gif" width="9" height="8" /></td> 
+                
+                <td align="right" valign="top"><img src="http://www3.weforum.org/fweblive/fragments/wefheader_dynamic/img/Bar_right.gif" width="9" height="8" /></td> 
+              </tr> 
+							
+            </table> 
+      	</td> 
+      </tr> 
+   
+      
+    </table> 
+    </td> 
+  </tr> 
+  <tbody> 
+</table> 
+ 
+<!--SS_END_SNIPPET(fragment19,2)--> 
+ <!--WEFtopNavigationTable end --></td> 
+      </tr> 
+ 
+      <tr> 
+        <td  valign="top" align="center" width="960"  background="/imgs/Bg.gif"> 
+          <!--WEFinnerTable begin --> 
+ 
+          <table cellspacing="0" cellpadding="0" align="left" valign="top" border="0"> 
+          
+            <tbody> 
+              <tr> 
+              	
+              	<td width="15%"  bgcolor="#FFFFFF"></td>
+                <td valign="top" bgcolor="#FFFFFF"> 
+                  <div id="mainContent"> <br><br>
+<p>                    
+<H2>Apologies - this section of our website is currently unavailable</H2>
+<br>
+In the meantime, please use the contact information below for any website related inquiry or general questions.
+<br><br>
+WORLD ECONOMIC FORUM<br>
+91-93 route de la Capite<br>
+CH - 1223 Cologny/Geneva<br>
+Switzerland<br>
+<br><br>
+Tel: +41 (0) 22 869 1212<br>
+Fax: +41 (0) 22 786 2744<br>
+E-mail: <a href="mailto:contact@weforum.org">contact@weforum.org</a><br>
+</p><br>
+<script language="javascript">
+	document.write(document.referrer);
+	</script> 
+                          </td> 
+							
+                          <td width="15%"  bgcolor="#FFFFFF"></td> 
+                          
+                        </tr> 
+                      </tbody> 
+                    </table> 
+                    
+                    
+                    <!--WEFinnerTable end --> 
+                  </div> 
+                </td> 
+              </tr> 
+ 
+              <tr> 
+                <td align="middle"> 
+   
+                </td> 
+              </tr> 
+            </tbody> 
+          </table><!--outerTable end --> 
+        </td> 
+      </tr> 
+    </tbody> 
+  </table> 
+  </center> 
+ 
+</body> 
+</html> 
