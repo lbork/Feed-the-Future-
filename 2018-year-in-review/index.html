@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html dir="ltr" lang="en" class="no-js">
   <head>
@@ -37,19 +36,20 @@
 
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js" async defer></script>
 
-    <meta name='robots' content='noindex,follow' />
+    
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
-<link rel='stylesheet' id='wp-block-library-css'  href='/wp-includes/css/dist/block-library/style.min.css?ver=5.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='/wp-includes/css/dist/block-library/style.min.css?ver=5.0.2' type='text/css' media='all' />
 <link rel='stylesheet' id='fonts-css'  href='https://fonts.googleapis.com/css?family=Playfair+Display%3A400%2C700%7CWork+Sans%3A300%2C500&#038;ver=1.0' type='text/css' media='all' />
 <link rel='stylesheet' id='main-css'  href='/wp-content/themes/feedthefuture/assets/styles/index.css?ver=1.0' type='text/css' media='all' />
 <link rel='https://api.w.org/' href='/wp-json/' />
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.0.2" />
 <link rel="canonical" href="/2018-year-in-review/" />
 <link rel='shortlink' href='/?p=13761' />
-<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffeedthefuture.wpengine.com%2F2018-year-in-review%2F" />
-<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ffeedthefuture.wpengine.com%2F2018-year-in-review%2F&#038;format=xml" />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2018-year-in-review%2F" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2018-year-in-review%2F&#038;format=xml" />
 
 
   </head>
@@ -64,7 +64,7 @@
 
     <header class="site-header">
       <div class="site-header__inner layout-container -padding-none">
-                  <a class="site-header__heading" href="" rel="home">
+                  <a class="site-header__heading" href="/" rel="home">
             Feed the Future
           </a>
         <nav class="site-navigation">
@@ -216,10 +216,13 @@
             }
           }
         </style><div class="site-search -left -gradient" id="search">
-        <form method="get" action="/search" role="search" class="site-search__form">
-          <label for="q" class="a11y-sr-only">Search</label>
-          <input type="text" name="q" id="q" placeholder="What are you looking for?">
-          <button type="submit">Search</button>
+
+        <form accept-charset="UTF-8" action="https://search.usa.gov/search" id="search_form" method="get" role="search" class="site-search__form">
+          <input name="utf8" type="hidden" value="&#x2713;">
+          <input id="affiliate" name="affiliate" type="hidden" value="feed-the-future">
+          <label for="query" class="a11y-sr-only">Enter Search Term(s):</label>
+          <input autocomplete="off" class="usagov-search-autocomplete" id="query" name="query" type="text" placeholder="What are you looking for?">
+          <button name="commit" type="submit">Search</button>
         </form><p class="site-search__heading heading-h4">Popular Searches</p>
 
           <ul class="site-search__suggestions"><li>
@@ -679,12 +682,12 @@
   width: 100px;
   height: 100px;
   margin: -50px 0 0 -50px;
-  background: url(../images/mediaelement/bigplay.svg) no-repeat;
+  background: url(/images/mediaelement/bigplay.svg) no-repeat;
   background-position: 0 -100px;
 }
 
 .no-svg .mejs-overlay-button {
-  background-image: url(../images/mediaelement/bigplay.png);
+  background-image: url(/images/mediaelement/bigplay.png);
 }
 
 .mejs-overlay:hover .mejs-overlay-button {
@@ -699,7 +702,7 @@
   height: 80px;
   margin: -40px 0 0 -40px;
   background: #333;
-  background: url(../images/mediaelement/background.png);
+  background: url(/images/mediaelement/background.png);
   background: rgba(0, 0, 0, .9);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(50, 50, 50, .9)), to(rgba(0, 0, 0, .9)));
   background: -webkit-linear-gradient(top, rgba(50, 50, 50, .9), rgba(0, 0, 0, .9));
@@ -711,7 +714,7 @@
   display: block;
   width: 80px;
   height: 80px;
-  background: transparent url(../images/mediaelement/loading.gif) 50% 50% no-repeat;
+  background: transparent url(/images/mediaelement/loading.gif) 50% 50% no-repeat;
 }
 
 /* End: LAYERS */
@@ -725,7 +728,7 @@
   padding: 0;
   bottom: 0;
   left: 0;
-  background: url(../images/mediaelement/background.png);
+  background: url(/images/mediaelement/background.png);
   background: rgba(0, 0, 0, .7);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(50, 50, 50, .7)), to(rgba(0, 0, 0, .7)));
   background: -webkit-linear-gradient(top, rgba(50, 50, 50, .7), rgba(0, 0, 0, .7));
@@ -762,11 +765,11 @@
   height: 16px;
   width: 16px;
   border: 0;
-  background: transparent url(../images/mediaelement/controls.svg) no-repeat;
+  background: transparent url(/images/mediaelement/controls.svg) no-repeat;
 }
 
 .no-svg .mejs-controls .mejs-button button {
-  background-image: url(../images/mediaelement/controls.png);
+  background-image: url(/images/mediaelement/controls.png);
 }
 
 /* :focus for accessibility */
@@ -973,7 +976,7 @@
   display: none;
   height: 115px;
   width: 25px;
-  background: url(../images/mediaelement/background.png);
+  background: url(/images/mediaelement/background.png);
   background: rgba(50, 50, 50, .7);
   border-radius: 0;
   top: -115px;
@@ -1095,7 +1098,7 @@
   right: -51px;
   width: 85px;
   height: 100px;
-  background: url(../images/mediaelement/background.png);
+  background: url(/images/mediaelement/background.png);
   background: rgba(50, 50, 50, .7);
   border: solid 1px transparent;
   padding: 10px 10px 0 10px;
@@ -1245,7 +1248,7 @@
 
 .mejs-captions-text {
   padding: 3px 5px;
-  background: url(../images/mediaelement/background.png);
+  background: url(/images/mediaelement/background.png);
   background: rgba(20, 20, 20, .5);
   white-space: pre-wrap;
 }
@@ -1349,7 +1352,7 @@
   right: -10px;
   width: 130px;
   height: 100px;
-  background: url(../images/mediaelement/background.png);
+  background: url(/images/mediaelement/background.png);
   background: rgba(50, 50, 50, .7);
   border: solid 1px transparent;
   padding: 10px;
@@ -1399,7 +1402,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(../images/mediaelement/background.png);
+  background: url(/images/mediaelement/background.png);
   background: rgba(50, 50, 50, .7);
   z-index: 1000;
   overflow: hidden;
@@ -1414,7 +1417,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  background: url(../images/mediaelement/background.png);
+  background: url(/images/mediaelement/background.png);
   background: rgba(50, 50, 50, .7);
   color: #fff;
   padding: 4px;
@@ -1446,7 +1449,7 @@
   left: -10px;
   width: 60px;
   height: 100px;
-  background: url(../images/mediaelement/background.png);
+  background: url(/images/mediaelement/background.png);
   background: rgba(50, 50, 50, .7);
   border: solid 1px transparent;
   padding: 0;
@@ -1520,7 +1523,7 @@
 
 .mejs-ted .mejs-controls .mejs-time-rail .mejs-time-total {
   background-color: none;
-  background: url(../images/mediaelement/controls-ted.png) repeat-x 0 -52px;
+  background: url(/images/mediaelement/controls-ted.png) repeat-x 0 -52px;
   height: 6px;
 }
 
@@ -1530,7 +1533,7 @@
 
 .mejs-ted .mejs-controls .mejs-time-rail .mejs-time-loaded {
   background-color: none;
-  background: url(../images/mediaelement/controls-ted.png) repeat-x 0 -52px;
+  background: url(/images/mediaelement/controls-ted.png) repeat-x 0 -52px;
   width: 0;
   height: 6px;
 }
@@ -1539,7 +1542,7 @@
   width: 0;
   height: 6px;
   background-color: none;
-  background: url(../images/mediaelement/controls-ted.png) repeat-x 0 -59px;
+  background: url(/images/mediaelement/controls-ted.png) repeat-x 0 -59px;
 }
 
 .mejs-ted .mejs-controls .mejs-time-rail .mejs-time-handle {
@@ -1549,7 +1552,7 @@
   height: 21px;
   top: -7px;
   border: 0;
-  background: url(../images/mediaelement/controls-ted.png) no-repeat 0 0;
+  background: url(/images/mediaelement/controls-ted.png) no-repeat 0 0;
 }
 
 .mejs-ted .mejs-controls .mejs-time-rail .mejs-time-float {
@@ -1566,7 +1569,7 @@
 .mejs-ted .mejs-controls .mejs-playpause-button button {
   width: 49px;
   height: 28px;
-  background: url(../images/mediaelement/controls-ted.png) no-repeat -50px -23px;
+  background: url(/images/mediaelement/controls-ted.png) no-repeat -50px -23px;
   margin: 0;
   padding: 0;
 }
@@ -1586,13 +1589,13 @@
 .mejs-ted .mejs-controls .mejs-fullscreen-button button {
   width: 19px;
   height: 17px;
-  background: transparent url(../images/mediaelement/controls-ted.png) no-repeat 0 -66px;
+  background: transparent url(/images/mediaelement/controls-ted.png) no-repeat 0 -66px;
   margin: 0;
   padding: 0;
 }
 
 .mejs-ted .mejs-controls .mejs-unfullscreen button {
-  background: transparent url(../images/mediaelement/controls-ted.png) no-repeat -21px -66px;
+  background: transparent url(/images/mediaelement/controls-ted.png) no-repeat -21px -66px;
   margin: 0;
   padding: 0;
 }
@@ -1605,7 +1608,7 @@
 }
 
 .mejs-ted .mejs-controls .mejs-mute button {
-  background: url(../images/mediaelement/controls-ted.png) no-repeat -15px 0;
+  background: url(/images/mediaelement/controls-ted.png) no-repeat -15px 0;
   width: 24px;
   height: 22px;
   margin: 0;
@@ -1613,7 +1616,7 @@
 }
 
 .mejs-ted .mejs-controls .mejs-unmute button {
-  background: url(../images/mediaelement/controls-ted.png) no-repeat -40px 0;
+  background: url(/images/mediaelement/controls-ted.png) no-repeat -40px 0;
   width: 24px;
   height: 22px;
   margin: 0;
@@ -1630,7 +1633,7 @@
 }
 
 .mejs-ted .mejs-controls .mejs-volume-button .mejs-volume-total {
-  background: url(../images/mediaelement/controls-ted.png) repeat-y -41px -66px;
+  background: url(/images/mediaelement/controls-ted.png) repeat-y -41px -66px;
   left: 8px;
   width: 6px;
   height: 50px;
@@ -1639,7 +1642,7 @@
 .mejs-ted .mejs-controls .mejs-volume-button .mejs-volume-current {
   left: 8px;
   width: 6px;
-  background: url(../images/mediaelement/controls-ted.png) repeat-y -48px -66px;
+  background: url(/images/mediaelement/controls-ted.png) repeat-y -48px -66px;
   height: 50px;
 }
 
@@ -1688,7 +1691,7 @@
 /* WMP player */
 
 .mejs-wmp .mejs-controls {
-  background: transparent url(../images/mediaelement/controls-wmp-bg.png) center 16px no-repeat;
+  background: transparent url(/images/mediaelement/controls-wmp-bg.png) center 16px no-repeat;
   height: 65px;
 }
 
@@ -1730,7 +1733,7 @@
   height: 9px;
   top: -3px;
   border: 0;
-  background: url(../images/mediaelement/controls-wmp.png) no-repeat 0 -80px;
+  background: url(/images/mediaelement/controls-wmp.png) no-repeat 0 -80px;
 }
 
 .mejs-wmp .mejs-controls .mejs-time-rail .mejs-time-float {
@@ -1748,7 +1751,7 @@
 .mejs-wmp .mejs-controls .mejs-playpause-button button {
   width: 40px;
   height: 40px;
-  background: url(../images/mediaelement/controls-wmp.png) no-repeat 0 0;
+  background: url(/images/mediaelement/controls-wmp.png) no-repeat 0 0;
   margin: 0;
   padding: 0;
 }
@@ -1782,7 +1785,7 @@
 .mejs-wmp .mejs-controls .mejs-volume-button button {
   margin: 0;
   padding: 0;
-  background: url(../images/mediaelement/controls-wmp.png) no-repeat -42px -17px;
+  background: url(/images/mediaelement/controls-wmp.png) no-repeat -42px -17px;
   width: 20px;
   height: 15px;
 }
@@ -1790,7 +1793,7 @@
 .mejs-wmp .mejs-controls .mejs-unmute button {
   margin: 0;
   padding: 0;
-  background: url(../images/mediaelement/controls-wmp.png) no-repeat -42px 0;
+  background: url(/images/mediaelement/controls-wmp.png) no-repeat -42px 0;
   width: 20px;
   height: 15px;
 }
@@ -1810,7 +1813,7 @@
 .mejs-wmp .mejs-controls .mejs-fullscreen-button button {
   margin: 0;
   padding: 0;
-  background: url(../images/mediaelement/controls-wmp.png) no-repeat -63px 0;
+  background: url(/images/mediaelement/controls-wmp.png) no-repeat -63px 0;
   width: 15px;
   height: 14px;
 }
@@ -3531,7 +3534,7 @@
           <p>How do we help the more than 800 million people across the world who go to bed hungry each night get enough nutritious and safe food? Feed the Future believes the answer is clear:</p>
           <h4>Through partnerships and innovation.</h4>
           <p>Tackling global hunger requires “all hands on deck.” Feed the Future represents a broad partnership that draws on the expertise, resources, talents and dedication of numerous organizations, companies and individuals, including <a class="no-external-link-icon" href="https://twitter.com/FeedtheFuture/status/1055203253565251598/photo/1" target="_blank">young Americans</a> who will be the future leaders of agriculture.</p>
-          <p><a class="no-external-link-icon" href="/results/" class="no-external-link-icon" target="_blank">We are proud to say</a> our collective efforts have helped millions of families live better lives in the areas where we work.</p>
+          <p><a class="no-external-link-icon" href="/results/">We are proud to say</a> our collective efforts have helped millions of families live better lives in the areas where we work.</p>
           <p>This year, our partners turned out in unprecedented numbers to connect and spread the word during <a class="no-external-link-icon" href="https://twitter.com/i/moments/1041673133818871810?lang=en" target="_blank">Feed the Future Week</a>. From launching new partnerships to extending existing ones, we worked together this year to meet the challenges of a changing world.</p>
           <p>As we reflect on the great strides we’ve made in 2018, we look ahead to the challenges and opportunities that are shaping our work in the year to come as we protect and accelerate progress on the journey to self-reliance.</p>
           <p><em>Continue reading to learn more about our year.</em></p>
@@ -4377,11 +4380,11 @@ function initMediaElement() {
         id="signupScript"
         src="//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js"
         async
-        defer></script>
+ defer></script>
       <!-- End Constant Contact Active Forms -->
 
       <p class="list-signup__newsletter">
-        <a href="/resources/newsletters/">Check out our latest newsletter</a>
+        <a href="/newsletters/">Check out our latest newsletter</a>
       </p>
 
     </div>
@@ -4393,7 +4396,7 @@ function initMediaElement() {
   <div class="layout-container -padding-none">
     <div class="site-footer__inner">
       <div class="site-footer__col-1">
-        <a class="site-footer__logo" href="" rel="home">
+        <a class="site-footer__logo" href="/" rel="home">
           <img alt="Feed the Future" src="/wp-content/themes/feedthefuture/assets/images/logo.svg">
         </a>
 
@@ -4408,7 +4411,7 @@ function initMediaElement() {
             </li><li role="presentation">
               <a href="https://www.usa.gov/" target="_blank" aria-label="USA.gov opens in a new tab or window">USA.gov</a>
             </li><li role="presentation">
-              <a href="https://www.usaid.gov" target="_blank" aria-label="USAID opens in a new tab or window">USAID</a>
+              <a href="https://www.usaid.gov/" target="_blank" aria-label="USAID opens in a new tab or window">USAID</a>
             </li></ul>
       </div>
 
@@ -4463,7 +4466,7 @@ function initMediaElement() {
             </li><li role="presentation">
               <a href="https://www.usa.gov/" target="_blank" aria-label="USA.gov opens in a new tab or window">USA.gov</a>
             </li><li role="presentation">
-              <a href="https://www.usaid.gov" target="_blank" aria-label="USAID opens in a new tab or window">USAID</a>
+              <a href="https://www.usaid.gov/" target="_blank" aria-label="USAID opens in a new tab or window">USAID</a>
             </li></ul>
 
       </div>
@@ -4473,7 +4476,7 @@ function initMediaElement() {
 <link rel='stylesheet' id='list-signup-css'  href='/wp-content/themes/feedthefuture/assets/styles/list-signup.css?ver=1.0' type='text/css' media='all' />
 <link rel='stylesheet' id='footer-css'  href='/wp-content/themes/feedthefuture/assets/styles/footer.css?ver=1.0' type='text/css' media='all' />
 <script type='text/javascript' src='/wp-content/themes/feedthefuture/assets/scripts/index.js?ver=1.0'></script>
-<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=5.0.1'></script>
+
 
 
   </body>
