@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+  <!--[if IEMobile 7]><html class="no-js ie iem7" lang="en" dir="ltr"><![endif]-->
+  <!--[if lte IE 6]><html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+  <!--[if (IE 7)&(!IEMobile)]><html class="no-js ie lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+  <!--[if IE 8]><html class="no-js ie lt-ie9" lang="en" dir="ltr"><![endif]-->
+  <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js ie" lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema# schema: http://schema.org/"><![endif]-->
+  <!--[if !IE]><!--><html class="no-js" lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema# schema: http://schema.org/"><!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="cleartype" content="on" />
+<meta name="MobileOptimized" content="width" />
+<link rel="apple-touch-icon-precomposed" href="https://www.growafrica.com/sites/all/themes/omega/omega/apple-touch-icon-precomposed-144x144.png" sizes="144x144" />
+<link rel="apple-touch-icon-precomposed" href="https://www.growafrica.com/sites/all/themes/omega/omega/apple-touch-icon-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" href="https://www.growafrica.com/sites/all/themes/omega/omega/apple-touch-icon-precomposed-72x72.png" sizes="72x72" />
+<link rel="apple-touch-icon-precomposed" href="https://www.growafrica.com/sites/all/themes/omega/omega/apple-touch-icon-precomposed-114x114.png" sizes="114x114" />
+<meta name="HandheldFriendly" content="true" />
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+<link rel="shortcut icon" href="https://www.growafrica.com/sites/default/files/ga-favicon.png" type="image/png" />
+<meta name="description" content="Browse through Grow Africa Articles on our projects, resources and organizations worked with." /><meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<meta name="viewport" content="width=device-width" />
+<link rel="canonical" href="https://www.growafrica.com/resources/all" />
+<link rel="shortlink" href="https://www.growafrica.com/resources/all" />
+  <title>Our Resources | Articles | Grow Africa</title>
+  <style>
+@import url("https://www.growafrica.com/profiles/commons/modules/contrib/editor/css/components/align.module.css?p194qk");
+@import url("https://www.growafrica.com/profiles/commons/modules/contrib/editor/css/components/resize.module.css?p194qk");
+@import url("https://www.growafrica.com/profiles/commons/modules/contrib/editor/css/filter/filter.caption.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/omega/omega/css/modules/system/system.base.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/omega/omega/css/modules/system/system.menus.theme.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/omega/omega/css/modules/system/system.messages.theme.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/omega/omega/css/modules/system/system.theme.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/modules/calendar/css/calendar_multiday.css?p194qk");
+@import url("https://www.growafrica.com/profiles/commons/modules/contrib/date/date_api/date.css?p194qk");
+@import url("https://www.growafrica.com/profiles/commons/modules/contrib/date/date_popup/themes/datepicker.1.7.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/modules/features/ga_reports/stylesheets/ga_reports.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/omega/omega/css/modules/comment/comment.theme.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/modules/growafrica_letter_of_intent/stylesheets/growafrica_letter_of_intent.css?p194qk");
+@import url("https://www.growafrica.com/modules/node/node.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/modules/pet/pet.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/omega/omega/css/modules/field/field.theme.css?p194qk");
+@import url("https://www.growafrica.com/profiles/commons/modules/contrib/views/css/views.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/omega/omega/css/modules/poll/poll.theme.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/omega/omega/css/modules/search/search.theme.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/omega/omega/css/modules/user/user.base.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/omega/omega/css/modules/forum/forum.theme.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/omega/omega/css/modules/user/user.theme.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/modules/ckeditor/css/ckeditor.css?p194qk");
+@import url("https://www.growafrica.com/profiles/commons/modules/commons/commons_media/commons_media.css?p194qk");
+</style>
+<style>
+@import url("https://www.growafrica.com/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.core.min.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.theme.min.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.button.min.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.resizable.min.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/modules/jquery_update/replace/ui/themes/base/minified/jquery.ui.dialog.min.css?p194qk");
+@import url("https://www.growafrica.com/profiles/commons/modules/contrib/ctools/css/ctools.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/modules/linkedin/linkedin_auth/linkedin_auth.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/modules/linkedin/linkedin_status/linkedin_status.css?p194qk");
+@import url("https://www.growafrica.com/profiles/commons/modules/contrib/panels/css/panels.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/modules/views_charts/views_charts.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/ga_rw/layouts/ga_rw_resources/ga_rw_resources_admin.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/libraries/select2/select2.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/modules/select2/css/select2_integration.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/libraries/superfish/css/superfish.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/libraries/superfish/css/superfish-smallscreen.css?p194qk");
+</style>
+<style>
+@import url("https://www.growafrica.com/sites/all/themes/ga_rw/css/ga-rw.styles.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/ga_rw/css/submit.css?p194qk");
+@import url("https://www.growafrica.com/sites/all/themes/ga_rw/css/hacks.css?p194qk");
+</style>
+  <script src="https://www.growafrica.com/sites/default/files/js/js_KPu2woAL851thW4-4xJE-0Ze4h3QvRYCeWPid7himXM.js"></script>
+<script src="https://www.growafrica.com/sites/default/files/js/js_l837GhvUvaQFYE6g1cceNLgn8aToiMCa9hH383w5c0U.js"></script>
+<script src="https://www.growafrica.com/sites/all/modules/views_charts/views_charts.js?p194qk"></script>
+<script src="https://www.growafrica.com/sites/default/files/js/js_d27f4s8nguPEEPvqc12UKursNHjMue6YvjkFBJu6jqA.js"></script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-56034369-1", {"cookieDomain":".growafrica.com"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<script src="https://www.growafrica.com/sites/default/files/js/js_RlK8NXOxi34gEQ93Akm867JOY8TT_gJqUBMKIQ-zSQY.js"></script>
+<script src="https://www.growafrica.com/sites/default/files/js/js_wdtaYbTm1eYYjeZfWwXGNdXlfcbnd7lSsfklFAGzyI0.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"ga_rw","theme_token":"rCB4600Xi4Zl3sY_LHlZyoURmsAgImR2pFLPF5LVxM0","jquery_version":"1.8","js":{"0":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.8\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/themes\/omega\/omega\/js\/no-js.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.button.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.mouse.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.draggable.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.position.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.resizable.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.dialog.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"sites\/all\/modules\/select2\/js\/Drupal.select2.js":1,"profiles\/commons\/modules\/contrib\/dialog\/misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/views_charts\/views_charts.js":1,"profiles\/commons\/modules\/contrib\/custom_search\/js\/custom_search.js":1,"sites\/all\/modules\/better_exposed_filters\/better_exposed_filters.js":1,"misc\/autocomplete.js":1,"sites\/all\/libraries\/select2\/select2.min.js":1,"profiles\/commons\/modules\/contrib\/views_load_more\/views_load_more.js":1,"profiles\/commons\/modules\/contrib\/views\/js\/base.js":1,"misc\/progress.js":1,"profiles\/commons\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/sfsmallscreen.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/libraries\/superfish\/supersubs.js":1,"sites\/all\/modules\/superfish\/superfish.js":1,"sites\/all\/themes\/ga_rw\/js\/bootstrap-tour-standalone.min.js":1,"sites\/all\/themes\/ga_rw\/js\/js.cookie.min.js":1,"sites\/all\/themes\/ga_rw\/js\/underscore-min.js":1,"sites\/all\/themes\/ga_rw\/js\/ga-migrated.js":1,"sites\/all\/themes\/ga_rw\/js\/ga-rw.behaviors.js":1,"sites\/all\/themes\/ga_rw\/js\/ga-rw.global.js":1},"css":{"profiles\/commons\/modules\/contrib\/editor\/css\/components\/align.module.css":1,"profiles\/commons\/modules\/contrib\/editor\/css\/components\/resize.module.css":1,"profiles\/commons\/modules\/contrib\/editor\/css\/filter\/filter.caption.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/system\/system.base.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/system\/system.menus.theme.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/system\/system.messages.theme.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/system\/system.theme.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"profiles\/commons\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/commons\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/features\/ga_reports\/stylesheets\/ga_reports.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/comment\/comment.theme.css":1,"sites\/all\/modules\/growafrica_letter_of_intent\/stylesheets\/growafrica_letter_of_intent.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/pet\/pet.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/field\/field.theme.css":1,"profiles\/commons\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/poll\/poll.theme.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/search\/search.theme.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/user\/user.base.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/forum\/forum.theme.css":1,"sites\/all\/themes\/omega\/omega\/css\/modules\/user\/user.theme.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"profiles\/commons\/modules\/commons\/commons_media\/commons_media.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.button.css":1,"misc\/ui\/jquery.ui.resizable.css":1,"misc\/ui\/jquery.ui.dialog.css":1,"profiles\/commons\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/linkedin\/linkedin_auth\/linkedin_auth.css":1,"sites\/all\/modules\/linkedin\/linkedin_profile\/linkedin_profile.css":1,"sites\/all\/modules\/linkedin\/linkedin_status\/linkedin_status.css":1,"profiles\/commons\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/views_charts\/views_charts.css":1,"sites\/all\/themes\/ga_rw\/layouts\/ga_rw_resources\/ga_rw_resources_admin.css":1,"sites\/all\/libraries\/select2\/select2.css":1,"sites\/all\/modules\/select2\/css\/select2_integration.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/libraries\/superfish\/css\/superfish-smallscreen.css":1,"sites\/all\/themes\/ga_rw\/css\/ga-rw.styles.css":1,"sites\/all\/themes\/ga_rw\/css\/submit.css":1,"sites\/all\/themes\/ga_rw\/css\/hacks.css":1}},"statuses":{"autofocus":false,"noautoclear":false,"maxlength":"0","hideLength":0,"refreshLink":false},"custom_search":{"form_target":"_self","solr":1},"better_exposed_filters":{"datepicker":false,"slider":false,"settings":[],"views":{"resources":{"displays":{"panel_pane_1":{"filters":{"field_topic_tid":{"required":false},"field_country_tid":{"required":false},"field_resource_type_value":{"required":false},"field_crop_tid":{"required":false},"field_publishing_group_target_id":{"required":false}}}}}}},"select_2":{"elements":{"edit-field-country-tid":{"separator":"\u00b6","jqui_sortable":false,"dropdownAutoWidth":true,"width":"element","containerCssClass":"","minimumResultsForSearch":"20","allowClear":true},"edit-field-resource-type-value":{"separator":"\u00b6","jqui_sortable":false,"dropdownAutoWidth":true,"width":"element","containerCssClass":"","minimumResultsForSearch":"20","allowClear":true},"edit-field-crop-tid":{"separator":"\u00b6","jqui_sortable":false,"dropdownAutoWidth":true,"width":"element","containerCssClass":"","minimumResultsForSearch":"20","allowClear":true},"edit-field-publishing-group-target-id":{"separator":"\u00b6","jqui_sortable":false,"dropdownAutoWidth":true,"width":"element","containerCssClass":"","minimumResultsForSearch":"20","allowClear":true}},"excludes":{"by_id":{"values":[],"reg_exs":[]},"by_class":[],"by_selectors":[]},"branch":3,"default_settings":{"separator":"\u00b6","jqui_sortable":false,"dropdownAutoWidth":true,"width":"element","containerCssClass":"","minimumResultsForSearch":"20"},"process_all_selects_on_page":true,"no_version_check":false,"settings_updated":true},"urlIsAjaxTrusted":{"\/resources\/all":true},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:e02ec6a211f27f74dc723fdf7755a420":{"view_name":"resources","view_display_id":"panel_pane_1","view_args":"","view_path":"resources\/all","view_base_path":"resources\/all","view_dom_id":"e02ec6a211f27f74dc723fdf7755a420","pager_element":0}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":"1"},"superfish":{"1":{"id":"1","sf":{"animation":{"opacity":"show"},"autoArrows":false,"dropShadows":false},"plugins":{"smallscreen":{"mode":"window_width","breakpointUnit":"px","title":"Main Menu (Grow Africa Rogerwilco)"},"supposition":true,"supersubs":true}}}});</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body class="html not-front not-logged-in page-resources page-resources-all i18n-en section-resources">
+  <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    <!--HEADER START-->
+<header class="header-fixed"> 
+  <div class="header-main">
+    <div class="rw-container rw-container-fluid rw-container-set">      
+        <!-- <div class="toggler"><a href="#"><i class="fa fa-bars fa-2x"></i></a></div>  -->
+        <div class="header-logo">         
+                      <a href="/" title="Home" rel="home" class="site-logo"><img src="https://www.growafrica.com/sites/default/files/ga-logo.png" alt="Home" /></a>
+                  </div> 
+      <div class="header-region">
+          <div class="l-region l-region--header">
+    <nav id="block-system-user-menu" role="navigation" class="block block--system block--menu block--system-user-menu">
+      
+  <ul class="menu"><li class="first leaf"><a href="/user">Login</a></li>
+<li class="last leaf"><a href="https://www.growafrica.com/user/register">Sign up</a></li>
+</ul></nav>
+  </div>
+      </div> 
+    </div>    
+  </div>
+
+  <div class="header-navigation cleafix">
+    <div class="rw-container rw-container-fluid rw-container-set"> 
+        <div class="l-region l-region--navigation">
+    <div id="block-superfish-1" class="block block--superfish block--superfish-1">
+        <div class="block__content">
+    <nav><ul  id="superfish-1" class="menu sf-menu sf-menu-main-menu-grow-africa sf-horizontal sf-style-none sf-total-items-9 sf-parent-items-5 sf-single-items-4 list"><li id="menu-72276-1" class="first odd sf-item-1 sf-depth-1 item sf-no-children"><a href="/" class="sf-depth-1 link"><span>Home</span></a></li><li id="menu-72281-1" class="middle even sf-item-2 sf-depth-1 item sf-total-children-4 sf-parent-children-0 sf-single-children-4 menuparent"><a href="/content/who-we-are" class="sf-depth-1 link menuparent"><span>About</span></a><ul><li id="menu-72296-1" class="first odd sf-item-1 sf-depth-2 item sf-no-children"><a href="/content/who-we-are" class="sf-depth-2 link"><span>Who We Are</span></a></li><li id="menu-72286-1" class="middle even sf-item-2 sf-depth-2 item sf-no-children"><a href="/content/loi-process-and-benefits" class="sf-depth-2 link"><span>LOI Process and Benefits</span></a></li><li id="menu-72291-1" class="middle odd sf-item-3 sf-depth-2 item sf-no-children"><a href="/about/responsible-investment" class="sf-depth-2 link"><span>Responsible Investment</span></a></li><li id="menu-85541-1" class="last even sf-item-4 sf-depth-2 item sf-no-children"><a href="/about/partners" class="sf-depth-2 link"><span>Partners</span></a></li></ul></li><li id="menu-72301-1" class="middle odd sf-item-3 sf-depth-1 item sf-no-children"><a href="/projects-platforms" class="sf-depth-1 link"><span>Projects, Platforms & Working Groups</span></a></li><li id="menu-72306-1" class="middle even sf-item-4 sf-depth-1 item sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent"><a href="/organisations" class="sf-depth-1 link menuparent"><span>Organisations</span></a><ul><li id="menu-94691-1" class="firstandlast odd sf-item-1 sf-depth-2 item sf-no-children"><a href="/organisations/loi-organisations" class="sf-depth-2 link"><span>LoI organisations</span></a></li></ul></li><li id="menu-72311-1" class="middle odd sf-item-5 sf-depth-1 item sf-total-children-12 sf-parent-children-0 sf-single-children-12 menuparent"><a href="/countries/benin" class="sf-depth-1 link menuparent"><span>Countries</span></a><ul><li id="menu-72316-1" class="first odd sf-item-1 sf-depth-2 item sf-no-children"><a href="/countries/benin" class="sf-depth-2 link"><span>Benin</span></a></li><li id="menu-72321-1" class="middle even sf-item-2 sf-depth-2 item sf-no-children"><a href="/countries/burkina-faso" class="sf-depth-2 link"><span>Burkina Faso</span></a></li><li id="menu-72326-1" class="middle odd sf-item-3 sf-depth-2 item sf-no-children"><a href="/countries/cote-divoire" class="sf-depth-2 link"><span>Cote D'Ivoire</span></a></li><li id="menu-72331-1" class="middle even sf-item-4 sf-depth-2 item sf-no-children"><a href="/countries/ethiopia" class="sf-depth-2 link"><span>Ethiopia</span></a></li><li id="menu-72336-1" class="middle odd sf-item-5 sf-depth-2 item sf-no-children"><a href="/countries/ghana" class="sf-depth-2 link"><span>Ghana</span></a></li><li id="menu-72341-1" class="middle even sf-item-6 sf-depth-2 item sf-no-children"><a href="/countries/kenya" class="sf-depth-2 link"><span>Kenya</span></a></li><li id="menu-72346-1" class="middle odd sf-item-7 sf-depth-2 item sf-no-children"><a href="/countries/malawi" class="sf-depth-2 link"><span>Malawi</span></a></li><li id="menu-72351-1" class="middle even sf-item-8 sf-depth-2 item sf-no-children"><a href="/countries/nigeria" class="sf-depth-2 link"><span>Nigeria</span></a></li><li id="menu-72391-1" class="middle odd sf-item-9 sf-depth-2 item sf-no-children"><a href="/countries/mozambique" class="sf-depth-2 link"><span>Mozambique</span></a></li><li id="menu-72361-1" class="middle even sf-item-10 sf-depth-2 item sf-no-children"><a href="/countries/rwanda" class="sf-depth-2 link"><span>Rwanda</span></a></li><li id="menu-72371-1" class="middle odd sf-item-11 sf-depth-2 item sf-no-children"><a href="/countries/senegal" class="sf-depth-2 link"><span>Senegal</span></a></li><li id="menu-72376-1" class="last even sf-item-12 sf-depth-2 item sf-no-children"><a href="/countries/tanzania" class="sf-depth-2 link"><span>Tanzania</span></a></li></ul></li><li id="menu-72396-1" class="active-trail middle even sf-item-6 sf-depth-1 item sf-no-children"><a href="/resources/all" class="sf-depth-1 link active"><span>Resources</span></a></li><li id="menu-85526-1" class="middle odd sf-item-7 sf-depth-1 item sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent"><a href="/news" class="sf-depth-1 link menuparent"><span>News</span></a><ul><li id="menu-85546-1" class="firstandlast odd sf-item-1 sf-depth-2 item sf-no-children"><a href="/news/archive" class="sf-depth-2 link"><span>News archive</span></a></li></ul></li><li id="menu-72406-1" class="middle even sf-item-8 sf-depth-1 item sf-total-children-3 sf-parent-children-0 sf-single-children-3 menuparent"><a href="/groups/grow-africa-2017-world-economic-forum-africa" class="sf-depth-1 link menuparent"><span>Events</span></a><ul><li id="menu-90256-1" class="first odd sf-item-1 sf-depth-2 item sf-no-children"><a href="/groups/grow-africa-2017-world-economic-forum-africa" class="sf-depth-2 link"><span>GA @ WEFA</span></a></li><li id="menu-90261-1" class="middle even sf-item-2 sf-depth-2 item sf-no-children"><a href="/groups/2016-grow-africa-investment-forum" class="sf-depth-2 link"><span>GAIF 2016</span></a></li><li id="menu-98606-1" class="last odd sf-item-3 sf-depth-2 item sf-no-children"><a href="/content/grow-africa-2017-agrf" class="sf-depth-2 link"><span>GA @ the 2017 AGRF</span></a></li></ul></li><li id="menu-72411-1" class="last odd sf-item-9 sf-depth-1 item sf-no-children"><a href="/content/contact-us-0" class="sf-depth-1 link"><span>Contact</span></a></li></ul></nav>  </div>
+</div>
+  </div>
+    </div>
+  </div>
+</header>
+<!--HEADER END-->
+
+<div class="header-spacer"></div>
+
+<!--CONTENT START-->
+<main role="main" class="main">
+  <div class="rw-container rw-container-fluid rw-container-set">  
+        <!--<h2 class="element-invisible">You are here</h2><ul class="breadcrumb"><li><a href="/">Home</a></li></ul>-->       
+              <h1>Resources</h1>
+            <!--<a id="main-content"></a>-->
+                  </div>
+  <div class="panels-container rw-container rw-container-fluid">      
+    <div class="ga-rw-resources" >
+       
+    <div class="rw-row">
+        
+          <div id="grid-layout" class="panel-pane pane-views-panes pane-resources-panel-pane-1 chosen-wrapper">
+            <div class="view view-resources view-id-resources view-display-id-panel_pane_1 default-resource-landing view-dom-id-e02ec6a211f27f74dc723fdf7755a420">
+        
+      <div class="view-filters clearfix">
+      <form class="views-exposed-form-resources-panel-pane-1" action="/resources/all" method="get" id="views-exposed-form-resources-panel-pane-1" accept-charset="UTF-8"><div>
+<div class="rw-container rw-container-fluid rw-container-set">
+  <div class="views-exposed-form">
+    <div class="views-exposed-widgets">
+      <div class="rw-row">
+        <h2>Search Resources</h2>
+<!--         <div class="rw-col rw-col-fea-12">
+ -->                  <div id="edit-field-topic-tid-wrapper" class="rw-col rw-col-fea-12 rw-col-tab-6 views-exposed-widget views-widget-filter-field_topic_tid">
+                          <label for="edit-field-topic-tid">
+                Topics              </label>
+                        
+            <div class="views-widget">
+              <div class="form-item form-type-textfield form-item-field-topic-tid">
+ <input type="text" id="edit-field-topic-tid" name="field_topic_tid" value="" size="60" maxlength="128" class="form-text form-autocomplete" /><input type="hidden" id="edit-field-topic-tid-autocomplete" value="https://www.growafrica.com/?q=admin/views/ajax/autocomplete/taxonomy/1" disabled="disabled" class="autocomplete" />
+</div>
+            </div>
+
+                      </div>
+                  <div id="edit-field-country-tid-wrapper" class="rw-col rw-col-fea-12 rw-col-tab-6 views-exposed-widget views-widget-filter-field_country_tid">
+                          <label for="edit-field-country-tid">
+                Country              </label>
+                        
+            <div class="views-widget">
+              <div class="form-item form-type-select form-item-field-country-tid">
+ <select data-placeholder="- ALL COUNTRIES -" multiple="multiple" name="field_country_tid[]" class="use-select-2 form-select" id="edit-field-country-tid" size="9"><option value="2501">Benin</option><option value="2506">Burkina Faso</option><option value="2511">Cote dIvoire</option><option value="2516">Ethiopia</option><option value="2521">Ghana</option><option value="2526">Kenya</option><option value="2531">Malawi</option><option value="2536">Mozambique</option><option value="2541">Nigeria</option><option value="4856">Other</option><option value="2546">Rwanda</option><option value="2551">Senegal</option><option value="2556">Tanzania</option><option value="2561">Uganda</option></select>
+</div>
+            </div>
+
+                      </div>
+                  <div id="edit-field-resource-type-value-wrapper" class="rw-col rw-col-fea-12 rw-col-tab-6 views-exposed-widget views-widget-filter-field_resource_type_value">
+                          <label for="edit-field-resource-type-value">
+                Resource Type              </label>
+                        
+            <div class="views-widget">
+              <div class="form-item form-type-select form-item-field-resource-type-value">
+ <select data-placeholder="- ALL RESOURCE TYPES -" multiple="multiple" name="field_resource_type_value[]" class="use-select-2 form-select" id="edit-field-resource-type-value" size="4"><option value="article">Article</option><option value="publication">Publication</option><option value="video">Video</option><option value="update">Update</option></select>
+</div>
+            </div>
+
+                      </div>
+                  <div id="edit-field-crop-tid-wrapper" class="rw-col rw-col-fea-12 rw-col-tab-6 views-exposed-widget views-widget-filter-field_crop_tid">
+                          <label for="edit-field-crop-tid">
+                Crop              </label>
+                        
+            <div class="views-widget">
+              <div class="form-item form-type-select form-item-field-crop-tid">
+ <select data-placeholder="- ALL CROPS -" multiple="multiple" name="field_crop_tid[]" class="use-select-2 form-select" id="edit-field-crop-tid" size="9"><option value="3201">Bananas</option><option value="3206">Barley</option><option value="3211">Beans</option><option value="3216">Black-Eyed Peas</option><option value="3221">Carrot</option><option value="3226">Cashew</option><option value="3231">Cassava</option><option value="3236">Cattle</option><option value="3246">Chick peas</option><option value="5936">Cocoa bean</option><option value="3251">Coconut</option><option value="3256">Coffee</option><option value="5946">Cotton</option><option value="3261">Cottonseed</option><option value="3266">Cottonseed Oil</option><option value="3271">Cow-pea</option><option value="3276">Dairy</option><option value="3281">Eucalyptus</option><option value="5941">Fertilizer</option><option value="3286">Fish</option><option value="5961">Fodder</option><option value="5176">Fruit</option><option value="3846">Fruit &amp; Vegetables</option><option value="3291">Groundnuts</option><option value="3296">Hibiscus</option><option value="3301">Honey</option><option value="3501">Horticulture</option><option value="3306">Jatropha</option><option value="5971">Lemongrass</option><option value="3311">Lentils</option><option value="3316">Litchi</option><option value="5956">Macadamia</option><option value="3321">Maize</option><option value="3326">Mango</option><option value="3336">Millet</option><option value="5951">Natural Rubber</option><option value="3196">None</option><option value="5721">Oilseed</option><option value="3421">Other</option><option value="5926">Palm Nut</option><option value="3341">Pigeon peas</option><option value="3346">Pineapple</option><option value="3351">Potato</option><option value="5931">Pseudocereal</option><option value="5976">Pulses</option><option value="3356">Pumpkin</option><option value="3361">Rice</option><option value="3366">Rice paddy</option><option value="5966">Salt</option><option value="3371">Sesame</option><option value="3376">Shea nut</option><option value="3381">Sorghum</option><option value="3386">Soy</option><option value="3391">Soya beans</option><option value="3396">Sugarcane</option><option value="3401">Sunflower</option><option value="3406">Tea</option><option value="3411">Tobacco</option><option value="3416">Tomato</option></select>
+</div>
+            </div>
+
+                      </div>
+                  <div id="edit-field-publishing-group-target-id-wrapper" class="rw-col rw-col-fea-12 rw-col-tab-6 views-exposed-widget views-widget-filter-field_publishing_group_target_id">
+                          <label for="edit-field-publishing-group-target-id">
+                Publishing Group              </label>
+                        
+            <div class="views-widget">
+              <div class="form-item form-type-select form-item-field-publishing-group-target-id">
+ <select data-placeholder="- PROJECT, PLATFORM, OR WORKING GROUP -" multiple="multiple" name="field_publishing_group_target_id[]" class="use-select-2 form-select" id="edit-field-publishing-group-target-id" size="5"><option value="1">Business Advisory Working Group Mozambique</option><option value="2">East African Potato Consortium</option><option value="3">Finance Working Group</option><option value="4">Horticulture Working Group Rwanda</option><option value="5">National Cassava Platform – Ghana</option><option value="6">National Cassava Platform – Mozambique</option><option value="7">National Cassava Platform – Nigeria</option><option value="8">Patient Procurement Platform</option><option value="9">Smallholder Working Group</option></select>
+</div>
+            </div>
+
+                      </div>
+        <!--         </div>
+ -->                               
+        <div class="rw-col"> 
+          <div class="views-exposed-widget views-submit-button">
+            <input type="submit" id="edit-submit-resources" name="" value="Search" class="form-submit" />          </div>
+                      <div class="views-exposed-widget views-reset-button">
+              <input type="submit" id="edit-reset" name="op" value="Reset" class="form-submit" />            </div>
+                  </div>       
+
+      </div>
+    </div>
+  </div>
+</div>
+</div></form>    </div>
+  
+  
+      <div class="view-content">
+      <div class="rw-container rw-container-fluid rw-container-set">
+	<div class="rw-row equalize">
+						  	<div class="rw-col rw-col-fea-12 rw-col-tab-4 resource-col">
+		  		<div class="resource-content">
+		    		  
+  <div class="views-field views-field-field-resource-type Article">        <div class="field-content">Article</div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/groups/grow-africa-highlights-2017">Grow Africa highlights in 2017</a></h3>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">In 2017, Grow Africa shifted focus from private sector engagement and mobilisation through LOI, to a more structured value chain development approach that encompasses all stakeholders.&nbsp;
+</div>  </div>  
+  <div class="views-field views-field-view-node">        <span class="field-content"><a href="/groups/grow-africa-highlights-2017" class="button button-resource">View Article</a></span>  </div>		    	</div>
+		    </div>
+				  	<div class="rw-col rw-col-fea-12 rw-col-tab-4 resource-col">
+		  		<div class="resource-content">
+		    		  
+  <div class="views-field views-field-field-resource-type Article">        <div class="field-content">Article</div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/groups/grow-africa-and-idh-launch-fund-support-agricultural-value-chain-development">Grow Africa and IDH launch fund to support agricultural value chain development </a></h3>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">Grow Africa and IDH&nbsp;have launched a business case development fund to undertake in depth market value chain studies that&nbsp;assess the current and projected market demand for the crops
+</div>  </div>  
+  <div class="views-field views-field-view-node">        <span class="field-content"><a href="/groups/grow-africa-and-idh-launch-fund-support-agricultural-value-chain-development" class="button button-resource">View Article</a></span>  </div>		    	</div>
+		    </div>
+				  	<div class="rw-col rw-col-fea-12 rw-col-tab-4 resource-col">
+		  		<div class="resource-content">
+		    		  
+  <div class="views-field views-field-field-resource-type Article">        <div class="field-content">Article</div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/groups/giving-life-line-small-holder-farmers-kenya">Giving a life-line to small holder farmers in Kenya</a></h3>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">The NPCK through its partnership with Grow Africa and AGRA, is implementing various initiatives that help address the challenges in the potato sub-sector in Kenya.
+</div>  </div>  
+  <div class="views-field views-field-view-node">        <span class="field-content"><a href="/groups/giving-life-line-small-holder-farmers-kenya" class="button button-resource">View Article</a></span>  </div>		    	</div>
+		    </div>
+				  	<div class="rw-col rw-col-fea-12 rw-col-tab-4 resource-col">
+		  		<div class="resource-content">
+		    		  
+  <div class="views-field views-field-field-resource-type Article">        <div class="field-content">Article</div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/groups/eastern-and-central-region-potato-fair-enhancing-technologies-kenyan-potato-value-chains-0">The Eastern and central region potato fair - Enhancing technologies in Kenyan Potato value chains</a></h3>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">As part of its efforts to transform the Potato Industry, the NPCK in partnership with the County Government of Nyeri organized for the Eastern and Central region Potato Fair
+</div>  </div>  
+  <div class="views-field views-field-view-node">        <span class="field-content"><a href="/groups/eastern-and-central-region-potato-fair-enhancing-technologies-kenyan-potato-value-chains-0" class="button button-resource">View Article</a></span>  </div>		    	</div>
+		    </div>
+				  	<div class="rw-col rw-col-fea-12 rw-col-tab-4 resource-col">
+		  		<div class="resource-content">
+		    		  
+  <div class="views-field views-field-field-resource-type Publication">        <div class="field-content">Publication</div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/groups/country-agribusiness-partnership-frameworks-cap-f-implementation-guide-governments-and">Country Agribusiness Partnership Frameworks (CAP-F) - An Implementation Guide for Governments and Partners</a></h3>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">This implementation guide is for governments and their partners seeking to establish a CAP Framework.
+</div>  </div>  
+  <div class="views-field views-field-view-node">        <span class="field-content"><a href="/groups/country-agribusiness-partnership-frameworks-cap-f-implementation-guide-governments-and" class="button button-resource">View Publication</a></span>  </div>		    	</div>
+		    </div>
+				  	<div class="rw-col rw-col-fea-12 rw-col-tab-4 resource-col">
+		  		<div class="resource-content">
+		    		  
+  <div class="views-field views-field-field-resource-type Publication">        <div class="field-content">Publication</div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/groups/2017-nepad-annual-report">2017 NEPAD Annual Report</a></h3>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">The NEPAD Agency,&nbsp;now with a footprint in 52 out of the 55 African Union Member States.&nbsp; The 2017 Annual Report is an account of the NEPAD Agency’s contribution to Agenda 2063.
+</div>  </div>  
+  <div class="views-field views-field-view-node">        <span class="field-content"><a href="/groups/2017-nepad-annual-report" class="button button-resource">View Publication</a></span>  </div>		    	</div>
+		    </div>
+				  	<div class="rw-col rw-col-fea-12 rw-col-tab-4 resource-col">
+		  		<div class="resource-content">
+		    		  
+  <div class="views-field views-field-field-resource-type Article">        <div class="field-content">Article</div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/groups/transforming-agriculture-africa">Transforming Agriculture in Africa</a></h3>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">H.E Hailemariam Desalegn, Ethiopian Prime Minister congratulated the AU&nbsp;and NEPAD Agency on the Biennial Review and Africa Agriculture Transformation Scorecard.&nbsp;
+</div>  </div>  
+  <div class="views-field views-field-view-node">        <span class="field-content"><a href="/groups/transforming-agriculture-africa" class="button button-resource">View Article</a></span>  </div>		    	</div>
+		    </div>
+				  	<div class="rw-col rw-col-fea-12 rw-col-tab-4 resource-col">
+		  		<div class="resource-content">
+		    		  
+  <div class="views-field views-field-field-resource-type Publication">        <div class="field-content">Publication</div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/groups/2017-progress-report-african-union-assembly-implementation-malabo-declaration">The 2017 progress report to the African Union Assembly on the Implementation of the Malabo Declaration</a></h3>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">Biennial Review Report of the AUC on the Implementation of the Malabo Declaration on Accelerated Agricultural Growth and Transformation for Shared prosperity and Improved Livelihoods
+</div>  </div>  
+  <div class="views-field views-field-view-node">        <span class="field-content"><a href="/groups/2017-progress-report-african-union-assembly-implementation-malabo-declaration" class="button button-resource">View Publication</a></span>  </div>		    	</div>
+		    </div>
+				  	<div class="rw-col rw-col-fea-12 rw-col-tab-4 resource-col">
+		  		<div class="resource-content">
+		    		  
+  <div class="views-field views-field-field-resource-type Blog-post">        <div class="field-content">Blog post</div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/groups/agriculture-key-prosperous-africa">Agriculture is the key to a prosperous Africa</a></h3>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">Agriculture captures the African story like no other economic activity — both the ties and traditions of the past, and the promise of a bright future.&nbsp;
+</div>  </div>  
+  <div class="views-field views-field-view-node">        <span class="field-content"><a href="/groups/agriculture-key-prosperous-africa" class="button button-resource">View Blog post</a></span>  </div>		    	</div>
+		    </div>
+				  	<div class="rw-col rw-col-fea-12 rw-col-tab-4 resource-col">
+		  		<div class="resource-content">
+		    		  
+  <div class="views-field views-field-field-resource-type Article">        <div class="field-content">Article</div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/groups/celebrating-successes-women-agribusiness">Celebrating successes of women in agribusiness</a></h3>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">Women control quite a significant segment of trade in Africa from the production of agricultural goods that are traded to cross-border formal and informal trade.
+</div>  </div>  
+  <div class="views-field views-field-view-node">        <span class="field-content"><a href="/groups/celebrating-successes-women-agribusiness" class="button button-resource">View Article</a></span>  </div>		    	</div>
+		    </div>
+				  	<div class="rw-col rw-col-fea-12 rw-col-tab-4 resource-col">
+		  		<div class="resource-content">
+		    		  
+  <div class="views-field views-field-field-resource-type Article">        <div class="field-content">Article</div>  </div>  
+  <div class="views-field views-field-field-ga-secretariat-resource">        <div class="field-content"><div class="tooltip-wrapper">
+<img src="/sites/all/themes/ga_rw/images/assets/landingpage/landingpage-tag-ga-secretariat-28x28.png">
+<div class="tooltip">Published by the Grow Africa Secretariat</div>
+</div></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/groups/improving-african-agriculture-business-climate-eu-africa-business-forum">Improving the African Agriculture Business Climate at the EU-Africa Business Forum</a></h3>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">Business leaders, ministers of finance and agriculture, investors, innovative start-ups and young women entrepreneurs met at the Agribusiness session during the 6th EU-Africa Business Forum
+</div>  </div>  
+  <div class="views-field views-field-view-node">        <span class="field-content"><a href="/groups/improving-african-agriculture-business-climate-eu-africa-business-forum" class="button button-resource">View Article</a></span>  </div>		    	</div>
+		    </div>
+				  	<div class="rw-col rw-col-fea-12 rw-col-tab-4 resource-col">
+		  		<div class="resource-content">
+		    		  
+  <div class="views-field views-field-field-resource-type Article">        <div class="field-content">Article</div>  </div>  
+  <div class="views-field views-field-field-ga-secretariat-resource">        <div class="field-content"><div class="tooltip-wrapper">
+<img src="/sites/all/themes/ga_rw/images/assets/landingpage/landingpage-tag-ga-secretariat-28x28.png">
+<div class="tooltip">Published by the Grow Africa Secretariat</div>
+</div></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/groups/leadership-agriculture-forum-accelerating-african-agricultural-transformation">Leadership for Agriculture Forum - Accelerating African Agricultural Transformation</a></h3>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content">The African Development Bank (AfDB), in collaboration with the Initiative for Global Development (IGD) and Grow Africa organized the first-ever Leadership for Agriculture Forum (L4Ag)
+</div>  </div>  
+  <div class="views-field views-field-view-node">        <span class="field-content"><a href="/groups/leadership-agriculture-forum-accelerating-african-agricultural-transformation" class="button button-resource">View Article</a></span>  </div>		    	</div>
+		    </div>
+			</div>
+</div>    </div>
+  
+      <ul class="pager pager-load-more"><li class="pager-next"><a href="/resources/all?field_topic_tid=&amp;&amp;&amp;&amp;&amp;page=1">Load more</a></li>
+</ul>  
+  
+  
+  
+  
+</div>    </div>
+            
+    </div>    
+   
+   
+</div>
+    <!---->
+  </div>   
+</main>
+<!--CONTENT END-->
+
+<!--FOOTER START-->
+<footer>
+  <div class="footer-bottom">
+    <div class="rw-container rw-container-fluid rw-container-set">
+        <div class="l-region l-region--footer">
+    <div id="block-block-171" class="block block--block block--block-171">
+        <div class="block__content">
+    <div class="footer-ga-logo"><img alt="Grow Africa logo" src="https://www.growafrica.com/sites/all/themes/ga_rw/images/assets/footer/footer-ga-logo.png" /></div>
+<div class="footer-ga-partners"><img alt="Grow Africa partners logo" src="https://www.growafrica.com/sites/all/themes/ga_rw/images/assets/footer/footer-ga-partners.png" /></div>
+  </div>
+</div>
+  </div>
+    </div>
+  </div>    
+  <div class="footer-closure">
+    <div class="rw-container rw-container-fluid rw-container-set">
+      <div class="copyright">&copy; 2018 Grow Africa</div>
+    </div>
+  </div>
+</footer>
+<!--FOOTER END-->  <script>
+      setTimeout(function(){var a=document.createElement("script");
+      var b=document.getElementsByTagName('script')[0];
+      a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0021/2793.js";
+      a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+      </script>
+</body>
+</html>
