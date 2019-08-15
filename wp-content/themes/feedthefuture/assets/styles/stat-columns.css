@@ -1,0 +1,2 @@
+.stat-columns{list-style:none;padding:0;margin:4rem auto;max-width:78rem}.stat-columns__item{margin-top:4rem}.stat-columns__item:nth-child(1){margin-top:0}@media (min-width:30em){.stat-columns{display:flex;flex-wrap:wrap;justify-content:space-between}.stat-columns__item{width:calc(50% - 2rem)}.stat-columns__item:nth-child(2){margin-top:0}}@media (min-width:48.75em){.stat-columns__item{width:calc(50% - 4rem)}}@media (min-width:61.25em){.stat-columns__item{width:calc(50% - 6rem)}}
+/*# sourceMappingURL=maps/index.css.map */
