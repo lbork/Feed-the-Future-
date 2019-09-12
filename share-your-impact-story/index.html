@@ -1328,6 +1328,10 @@ div.photo-uploader {
     display: block;
     margin: 0 auto 48px;
   }
+  .photo-uploader section.download-wrapper>button[disabled=true] {
+    color: #848484;
+    background-color: #e8e8e8
+  }
   .photo-uploader section.not-supported {
     display: none;
   }
@@ -1377,7 +1381,47 @@ div.photo-uploader {
     transition: all 0.75s;
   }
 }
+p.error {
+  display: none;
+  font-size: smaller!important;
+  color: #d23f61
+}
 </style>
+
+  <style>
+/*!--------------------------------------------------------------------
+STYLES "Outdated Browser"
+Version:    1.1.2 - 2015
+author:     Burocratik
+website:    http://www.burocratik.com
+* @preserve
+-----------------------------------------------------------------------*/
+#outdated{
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 170px;
+    text-align: center; text-transform: uppercase; z-index:1500;
+    background-color: #f25648; color: #ffffff;
+}
+* html #outdated{position: absolute;}
+#outdated h6{font-size: 25px; line-height: 25px; margin: 30px 0 10px;}
+#outdated p{font-size: 12px; line-height: 12px; margin: 0;}
+#outdated #btnUpdateBrowser{
+    display: block; position: relative; padding: 10px 20px; margin: 30px auto 0; width: 230px; /*need for IE*/
+    color: #ffffff; text-decoration: none; border: 2px solid #ffffff; cursor: pointer;
+}
+#outdated #btnUpdateBrowser:hover{color: #f25648; background-color:#ffffff;}
+#outdated .last{position: absolute; top: 10px; right: 25px; width: 20px; height: 20px;}
+#outdated .last[dir='rtl']{right: auto !important; left: 25px !important;}
+#outdated #btnCloseUpdateBrowser{
+    display: block; position: relative; width: 100%; height: 100%;
+    text-decoration: none; color: #ffffff; font-size: 36px; line-height: 36px;
+}
+</style>
+
+  <div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="https://bestvpn.org/outdatedbrowser/"> Outdated Browser </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
 
   <div class="photo-uploader">
         <header>
@@ -1427,6 +1471,7 @@ div.photo-uploader {
                 <label>Image Upload</label>
                 <p>For the best layout results, please select a horizontal image of yourself that you are photographed from the waist up and located in the center of the frame.</p>
                 <input type="file" id="file" />
+<p id="lblErrorUpload" class="error"></p>
             </x-field>
         </form>
 
@@ -1441,7 +1486,7 @@ div.photo-uploader {
 
         <section class="download-wrapper">
             <h2>Remember to use #HerImpact and #EndHunger on your posts!</h2>
-            <button id="btnDownload">Download</button>
+            <button id="btnDownload" disabled="true">Download</button>
         </section>
 
         <section class="not-supported">
@@ -1452,39 +1497,42 @@ div.photo-uploader {
     </div>
 
   <script>
-const
-    BIO_COUNT = 5,
-
+var BIO_COUNT = 5,
     //canvas constants
-    THEMES = {
-        'leader': {
-            'COLOR': 'rgb(210,63,97)'
-        },
-        'groundbreaker': {
-            'COLOR': 'rgb(80,129,59)'
-        },
-        'influencer': {
-            'COLOR': 'rgb(191,88,39)'
-        },
-        'entrepreneur': {
-            'COLOR': 'rgb(35,124,154)'
-        },
-        'innovator': {
-            'COLOR': 'rgb(229,169,35)'
-        }
-    },
+THEMES = {
+  'leader': {
+    'COLOR': 'rgb(210,63,97)'
+  },
+  'groundbreaker': {
+    'COLOR': 'rgb(80,129,59)'
+  },
+  'influencer': {
+    'COLOR': 'rgb(191,88,39)'
+  },
+  'entrepreneur': {
+    'COLOR': 'rgb(35,124,154)'
+  },
+  'innovator': {
+    'COLOR': 'rgb(229,169,35)'
+  }
+},
     CANVAS_DIMS = {
-        'fb-tw': {W: 1200, H: 628},
-        //'twitter': {W: 1200, H: 628},
-        'instagram': {W: 1080, H: 1080}
-    },
+  'fb-tw': {
+    W: 1200,
+    H: 628
+  },
+  //'twitter': {W: 1200, H: 628},
+  'instagram': {
+    W: 1080,
+    H: 1080
+  }
+},
     CANVAS_BORDER_WIDTH = 24,
     TEXT_INDENT = 36,
     ZOOM_MAX = 200,
     ZOOM_INC = 10;
 
-let
-    _video,
+var _video,
     _dialog,
     _interval,
     _currBioIdx = 1,
@@ -1501,6 +1549,7 @@ let
     _fpo = new Image(),
     _theImage = undefined,
     _imageUploaded = false,
+    _imageUploadErr,
     _imageX = 0,
     _imageY = 0,
     _moveImage = false,
@@ -1524,573 +1573,902 @@ let
     _charCount,
     _quoteContainer;
 
-const 
-    dialogNavClick = (e) => {
-        let o = e.target.nodeName == 'IMG' ? e.target.parentNode : e.target;
-        switch (o.className) {
-            case 'prev':
-                _currBioIdx--;
-                if (_currBioIdx <= 0)
-                    _currBioIdx = BIO_COUNT;
-                break;
-            case 'next':
-                _currBioIdx++;
-                if (_currBioIdx > BIO_COUNT)
-                    _currBioIdx = 1;
-                break;
-        }
-        _dialog.className = '';
-        _dialog.classList.add('b'+_currBioIdx);
-        _dialogNav.querySelector('p span').innerHTML = _currBioIdx;
-    },
+var dialogNavClick = function dialogNavClick(e) {
+  var o = e.target.nodeName == 'IMG' ? e.target.parentNode : e.target;
 
-    closeDialog = () => {
-        _dialog.style.display = 'none';
-        _overlay.style.display = 'none';
-    },
+  switch (o.className) {
+    case 'prev':
+      _currBioIdx--;
+      if (_currBioIdx <= 0) _currBioIdx = BIO_COUNT;
+      break;
 
-    showDialog = () => {
-        _dialog.className = '';
-        _dialog.classList.add('b'+_currBioIdx);
-        _dialog.style.display = 'block';
-        _overlay.style.display = 'block';
-        _dialogNav.querySelector('p span').innerHTML = _currBioIdx;
+    case 'next':
+      _currBioIdx++;
+      if (_currBioIdx > BIO_COUNT) _currBioIdx = 1;
+      break;
+  }
 
-        if (_firstDialog) {
-            _firstDialog = false;
-            _dialog.querySelectorAll('button').forEach((btn) => {
-                if (btn.className == 'close') {
-                    btn.onclick = closeDialog;
-                } else {
-                    btn.onclick = dialogNavClick;
-                }
-            });
-        }
-    },
-    
-    initPhotoUploader = () => {
-        _fpo.src = '/wp-content/uploads/2019/09/FPO-image.jpg';
-        _fpo.onload = () => {
-            draw();
-        };
-    },
+  _dialog.className = '';
 
-    grayscale = (pixels) => {
-        var d = pixels.data;
-        var max = 0;
-        var min = 255;
-        for (var i=0; i < d.length; i+=4) {
-            // Fetch maximum and minimum pixel values
-            if (d[i] > max) { max = d[i]; }
-            if (d[i] < min) { min = d[i]; }
-            // Grayscale by averaging RGB values
-            var r = d[i];
-            var g = d[i+1];
-            var b = d[i+2];
-            var v = 0.3333*r + 0.3333*g + 0.3333*b;
-            d[i] = d[i+1] = d[i+2] = v;
-        }
-        for (var i=0; i < d.length; i+=4) {
-            // Normalize each pixel to scale 0-255
-            var v = (d[i] - min) * 255/(max-min);
-            d[i] = d[i+1] = d[i+2] = v;
-        }
-        return pixels;
-    },
+  _dialog.classList.add('b' + _currBioIdx);
 
-    rgbSplit = (rgb) => {
-        rgb = rgb.replace('rgb(', '').replace(')', '').split(',');
-        for (let i = 0; i < rgb.length; i++) {
-            rgb[i] = parseInt(rgb[i]);
-        }
-        return rgb;
-    },
+  _dialogNav.querySelector('p span').innerHTML = _currBioIdx;
+},
+    closeDialog = function closeDialog() {
+  _dialog.style.display = 'none';
+  _overlay.style.display = 'none';
+},
+    showDialog = function showDialog() {
+  _dialog.className = '';
 
-    gradientMap = (rgb1, rgb2) => {
-        rgb1 = rgbSplit(rgb1);
-        rgb2 = rgbSplit(rgb2);
-        var gradient = [];
-        for (var i = 0; i < (256*4); i += 4) {
-            gradient[i] = ((256-(i/4))*rgb1[0] + (i/4)*rgb2[0])/256;
-            gradient[i+1] = ((256-(i/4))*rgb1[1] + (i/4)*rgb2[1])/256;
-            gradient[i+2] = ((256-(i/4))*rgb1[2] + (i/4)*rgb2[2])/256;
-            gradient[i+3] = 255;
-          }
-        return gradient;
-    },
+  _dialog.classList.add('b' + _currBioIdx);
 
-    draw = () => {
-        //get selected theme and color:
-        let theme_name = '',
-            theme_color = '';
+  _dialog.style.display = 'block';
+  _overlay.style.display = 'block';
+  _dialogNav.querySelector('p span').innerHTML = _currBioIdx;
 
-        if (_theme && _theme.value != '') {
-            for (var theme in THEMES) {
-                if (_theme.value.indexOf(theme) >= 0) {
-                    theme_name = theme;
-                    theme_color = THEMES[theme]['COLOR'];
-                }
-            }
-        }
+  if (_firstDialog) {
+    _firstDialog = false;
 
-        if (theme_name != '' && theme_color != '' && _dims) {
-            let isIG = _imageRatio.value == 'instagram';
-            _ctx.clearRect(0, 0, _canvas.width, _canvas.height);
+    _dialog.querySelectorAll('button').forEach(function (btn) {
+      if (btn.className == 'close') {
+        btn.onclick = closeDialog;
+      } else {
+        btn.onclick = dialogNavClick;
+      }
+    });
+  }
+},
+    initPhotoUploader = function initPhotoUploader() {
+  _fpo.src = 'img/FPO-image.jpg';
 
-            if (_theImage) {
-                let z = _zoom / 100;
-                _slider.value = _zoom;
+  _fpo.onload = function () {
+    draw();
+  };
+},
+    grayscale = function grayscale(pixels) {
+  var d = pixels.data;
+  var max = 0;
+  var min = 255;
 
-                //calculate image dimensions
-                _currImageW = _theImage.width * z;
-                _currImageH = _theImage.height * z;
+  for (var i = 0; i < d.length; i += 4) {
+    // Fetch maximum and minimum pixel values
+    if (d[i] > max) {
+      max = d[i];
+    }
 
-                //center image if it's the first draw:
-                if (_firstDraw || _isZoom) {
-                    _imageX = (_canvas.width * .5) - (_currImageW * .5);
-                    _imageY = (_canvas.height * .5) - (_currImageH * .5);
-                    _firstDraw = false;
-                    _isZoom = false;
-                }
+    if (d[i] < min) {
+      min = d[i];
+    } // Grayscale by averaging RGB values
 
-                _ctx.drawImage(_theImage, _imageX, _imageY, _currImageW, _currImageH);
-            } else {
-                _ctx.drawImage(_fpo, 0, 0, _canvas.width, _canvas.height);
-            }
 
-            //filter image:
-            let pixels,
-                pane_w = 408;
-            if (isIG) {
-                pane_w = 475;
-                pixels = _ctx.getImageData(0, 0, pane_w, _dims.H);
-            } else {
-                pixels = _ctx.getImageData(_dims.W - pane_w, 0, pane_w, _dims.H);
-            }
-            pixels = grayscale(pixels);
+    var r = d[i];
+    var g = d[i + 1];
+    var b = d[i + 2];
+    var v = 0.3333 * r + 0.3333 * g + 0.3333 * b;
+    d[i] = d[i + 1] = d[i + 2] = v;
+  }
 
-            let gradient = gradientMap('rgb(44,25,98)', theme_color);
-            for (var i = 0; i < pixels.data.length; i += 4) {
-                pixels.data[i] = gradient[pixels.data[i]*4];
-                pixels.data[i+1] = gradient[pixels.data[i+1]*4 + 1];
-                pixels.data[i+2] = gradient[pixels.data[i+2]*4 + 2];
-            }
+  for (var i = 0; i < d.length; i += 4) {
+    // Normalize each pixel to scale 0-255
+    var v = (d[i] - min) * 255 / (max - min);
+    d[i] = d[i + 1] = d[i + 2] = v;
+  }
 
-            if (isIG) {
-                _ctx.putImageData(pixels, 0, 0);
-            } else {
-                _ctx.putImageData(pixels, _dims.W - pane_w, 0);
-            }
+  return pixels;
+},
+    rgbSplit = function rgbSplit(rgb) {
+  rgb = rgb.replace('rgb(', '').replace(')', '').split(',');
 
-            //draw border:
-            _ctx.fillStyle = "#FFFFFF";
-            _ctx.fillRect(0, 0, _dims.W, CANVAS_BORDER_WIDTH); //top
-            _ctx.fillRect(0, _canvas.height - CANVAS_BORDER_WIDTH, _dims.W, CANVAS_BORDER_WIDTH); //bottom
+  for (var i = 0; i < rgb.length; i++) {
+    rgb[i] = parseInt(rgb[i]);
+  }
 
-            if (isIG) {
-                _ctx.fillRect(_canvas.width - CANVAS_BORDER_WIDTH, 0, CANVAS_BORDER_WIDTH, _dims.H); //left
-            } else {
-                _ctx.fillRect(0, 0, CANVAS_BORDER_WIDTH, _dims.H); //right
-            }
+  return rgb;
+},
+    gradientMap = function gradientMap(rgb1, rgb2) {
+  rgb1 = rgbSplit(rgb1);
+  rgb2 = rgbSplit(rgb2);
+  var gradient = [];
 
-            //right/left pane border
-            _ctx.fillStyle = theme_color;
-            if (isIG) {
-                pane_w = 475;
-                _ctx.fillRect(0, 0, pane_w, CANVAS_BORDER_WIDTH); //top
-                _ctx.fillRect(0, 0, CANVAS_BORDER_WIDTH, _dims.H); //right
-                _ctx.fillRect(0, _canvas.height - CANVAS_BORDER_WIDTH, pane_w, CANVAS_BORDER_WIDTH); //bottom
-            } else {
-                _ctx.fillRect(_dims.W - pane_w, 0, pane_w, CANVAS_BORDER_WIDTH); //top
-                _ctx.fillRect(_canvas.width - CANVAS_BORDER_WIDTH, 0, CANVAS_BORDER_WIDTH, _dims.H); //left
-                _ctx.fillRect(_dims.W - pane_w, _canvas.height - CANVAS_BORDER_WIDTH, pane_w, CANVAS_BORDER_WIDTH); //bottom
-            }
+  for (var i = 0; i < 256 * 4; i += 4) {
+    gradient[i] = ((256 - i / 4) * rgb1[0] + i / 4 * rgb2[0]) / 256;
+    gradient[i + 1] = ((256 - i / 4) * rgb1[1] + i / 4 * rgb2[1]) / 256;
+    gradient[i + 2] = ((256 - i / 4) * rgb1[2] + i / 4 * rgb2[2]) / 256;
+    gradient[i + 3] = 255;
+  }
 
-            let fullname = _fullName.value,
-                names = [];
-            if (fullname == '')
-                fullname = 'First & Last Name';
+  return gradient;
+},
+    draw = function draw() {
+  //get selected theme and color:
+  var theme_name = '',
+      theme_color = '';
 
-            _ctx.font = (isIG ? "60" : "62") + "px Playfair Display, serif";
+  if (_theme && _theme.value != '') {
+    for (var theme in THEMES) {
+      if (_theme.value.indexOf(theme) >= 0) {
+        theme_name = theme;
+        theme_color = THEMES[theme]['COLOR'];
+      }
+    }
+  }
 
-            let x = TEXT_INDENT + CANVAS_BORDER_WIDTH;
-            names = wrapText(fullname, 400);
+  if (theme_name != '' && theme_color != '' && _dims) {
+    var isIG = _imageRatio.value == 'instagram';
 
-            //title background
-            if (!isIG) {
-                let w = _ctx.measureText(names[0]).width + x;
+    _ctx.clearRect(0, 0, _canvas.width, _canvas.height);
 
-                _ctx.fillStyle = theme_color;
-                _ctx.fillRect(0, 90, w, 42);
-            }
+    if (_theImage) {
+      var z = _zoom / 100;
+      _slider.value = _zoom; //calculate image dimensions
 
-            //write text:
-            _ctx.fillStyle = "#FFFFFF";
+      _currImageW = _theImage.width * z;
+      _currImageH = _theImage.height * z; //center image if it's the first draw:
 
-            for (var i=0; i < names.length; i++) {
-                let y = isIG ? 150 : 132;
-                if (i > 0)
-                    y = y + (i * 72);
+      if (_firstDraw || _isZoom) {
+        _imageX = _canvas.width * .5 - _currImageW * .5;
+        _imageY = _canvas.height * .5 - _currImageH * .5;
+        _firstDraw = false;
+        _isZoom = false;
+      }
 
-                _ctx.fillText(names[i], x, y);
-            }
+      _ctx.drawImage(_theImage, _imageX, _imageY, _currImageW, _currImageH);
+    } else {
+      _ctx.drawImage(_fpo, 0, 0, _canvas.width, _canvas.height);
+    } //filter image:
 
-            let y = 180 + (62 * names.length),
-                career = _career.value;
-            if (career == '')
-                career = 'Title and Organization';
 
-            let fs = isIG ? 40 : 30;
+    var pixels,
+        pane_w = 408;
+
+    if (isIG) {
+      pane_w = 475;
+      pixels = _ctx.getImageData(0, 0, pane_w, _dims.H);
+    } else {
+      pixels = _ctx.getImageData(_dims.W - pane_w, 0, pane_w, _dims.H);
+    }
+
+    pixels = grayscale(pixels);
+    var gradient = gradientMap('rgb(44,25,98)', theme_color);
+
+    for (var i = 0; i < pixels.data.length; i += 4) {
+      pixels.data[i] = gradient[pixels.data[i] * 4];
+      pixels.data[i + 1] = gradient[pixels.data[i + 1] * 4 + 1];
+      pixels.data[i + 2] = gradient[pixels.data[i + 2] * 4 + 2];
+    }
+
+    if (isIG) {
+      _ctx.putImageData(pixels, 0, 0);
+    } else {
+      _ctx.putImageData(pixels, _dims.W - pane_w, 0);
+    } //draw border:
+
+
+    _ctx.fillStyle = "#FFFFFF";
+
+    _ctx.fillRect(0, 0, _dims.W, CANVAS_BORDER_WIDTH); //top
+
+
+    _ctx.fillRect(0, _canvas.height - CANVAS_BORDER_WIDTH, _dims.W, CANVAS_BORDER_WIDTH); //bottom
+
+
+    if (isIG) {
+      _ctx.fillRect(_canvas.width - CANVAS_BORDER_WIDTH, 0, CANVAS_BORDER_WIDTH, _dims.H); //left
+
+    } else {
+      _ctx.fillRect(0, 0, CANVAS_BORDER_WIDTH, _dims.H); //right
+
+    } //right/left pane border
+
+
+    _ctx.fillStyle = theme_color;
+
+    if (isIG) {
+      pane_w = 475;
+
+      _ctx.fillRect(0, 0, pane_w, CANVAS_BORDER_WIDTH); //top
+
+
+      _ctx.fillRect(0, 0, CANVAS_BORDER_WIDTH, _dims.H); //right
+
+
+      _ctx.fillRect(0, _canvas.height - CANVAS_BORDER_WIDTH, pane_w, CANVAS_BORDER_WIDTH); //bottom
+
+    } else {
+      _ctx.fillRect(_dims.W - pane_w, 0, pane_w, CANVAS_BORDER_WIDTH); //top
+
+
+      _ctx.fillRect(_canvas.width - CANVAS_BORDER_WIDTH, 0, CANVAS_BORDER_WIDTH, _dims.H); //left
+
+
+      _ctx.fillRect(_dims.W - pane_w, _canvas.height - CANVAS_BORDER_WIDTH, pane_w, CANVAS_BORDER_WIDTH); //bottom
+
+    }
+
+    var fullname = _fullName.value,
+        names = [];
+    if (fullname == '') fullname = 'First & Last Name';
+    _ctx.font = (isIG ? "60" : "62") + "px Playfair Display, serif";
+    var x = TEXT_INDENT + CANVAS_BORDER_WIDTH;
+    names = wrapText(fullname, 400); //title background
+
+    if (!isIG) {
+      var w = _ctx.measureText(names[0]).width + x;
+      _ctx.fillStyle = theme_color;
+
+      _ctx.fillRect(0, 90, w, 42);
+    } //write text:
+
+
+    _ctx.fillStyle = "#FFFFFF";
+
+    for (var i = 0; i < names.length; i++) {
+      var _y = isIG ? 150 : 132;
+
+      if (i > 0) _y = _y + i * 72;
+
+      _ctx.fillText(names[i], x, _y);
+    }
+
+    var y = 180 + 62 * names.length,
+        career = _career.value;
+    if (career == '') career = 'Title and Organization';
+    var fs = isIG ? 40 : 30;
+    _ctx.font = "Italic " + fs + "px Playfair Display, serif";
+    var career_lines = wrapText(career, 350);
+
+    for (var i = 0; i < career_lines.length; i++) {
+      if (i > 0) y += fs + 8;
+
+      _ctx.fillText(career_lines[i], TEXT_INDENT + CANVAS_BORDER_WIDTH, y);
+    }
+
+    fs = isIG ? 52 : 38;
+    _ctx.font = fs + "px Playfair Display, serif";
+    var st_lines = wrapText(_theme.value, isIG ? 375 : 260);
+    x = _dims.W - pane_w + TEXT_INDENT;
+
+    if (isIG) {
+      x = TEXT_INDENT + CANVAS_BORDER_WIDTH;
+      y += 220;
+    } else {
+      y = 110;
+    }
+
+    if (st_lines.length > 1) {
+      for (var i = 0; i < st_lines.length; i++) {
+        if (i > 0) y = y + i * 48;
+
+        for (var theme in THEMES) {
+          if (st_lines[i].indexOf(theme) >= 0) {
             _ctx.font = "Italic " + fs + "px Playfair Display, serif";
-            let career_lines = wrapText(career, 350);
+            _ctx.fillStyle = theme_color;
 
-            for (var i=0; i < career_lines.length; i++) {
-                if (i > 0)
-                    y += fs + 8;
+            var w_w = _ctx.measureText(theme).width;
 
-                _ctx.fillText(career_lines[i], TEXT_INDENT + CANVAS_BORDER_WIDTH, y);
-            }
-
-            fs = isIG ? 52 : 38;
-            _ctx.font = fs + "px Playfair Display, serif";
-            let st_lines = wrapText(_theme.value, isIG ? 375 : 260);
-            x = _dims.W - pane_w + TEXT_INDENT;
-
-            if (isIG) {
-                x = TEXT_INDENT + CANVAS_BORDER_WIDTH;
-                y += 220;
-            } else{
-                y = 110;
-            }
-
-            if (st_lines.length > 1) {
-                for (var i=0; i < st_lines.length; i++) {
-                    if (i > 0)
-                        y = y + (i * 48);
-                    for (var theme in THEMES) {
-                        if (st_lines[i].indexOf(theme) >= 0) {
-                            _ctx.font = "Italic " + fs + "px Playfair Display, serif";
-                            _ctx.fillStyle = theme_color;
-                            let w_w = _ctx.measureText(theme).width;
-                            _ctx.fillRect(x - 5, y - 23, w_w + 15, 26);
-                            _ctx.fillStyle = "#ffffff";
-                            break;
-                        }
-                    }
-                    _ctx.fillText(st_lines[i], x, y);
-                }
-            } else if (st_lines.length == 1) {
-                let word = '';
-                for (var theme in THEMES) {
-                    let pos = st_lines[0].indexOf(theme);
-                    if (pos >= 0) {
-                        word = theme;
-                        st_lines[0] = st_lines[0].substring(0, pos);
-                        break;
-                    }
-                }
-
-                _ctx.fillText(st_lines[0], x, y);
-                let temp_x = x + _ctx.measureText(st_lines[0]).width;
-
-                _ctx.fillStyle = "rgb(210,63,97)";
-                let w_w = _ctx.measureText(word).width;
-                _ctx.fillRect(temp_x - 5, y - 23, w_w + 15, 26);
-
-                _ctx.fillStyle = "#ffffff";
-                _ctx.font = "Italic " + fs + "px Playfair Display, serif";
-                _ctx.fillText(word, temp_x, y);
-            }
+            _ctx.fillRect(x - 5, y - 23, w_w + 15, 26);
 
             _ctx.fillStyle = "#ffffff";
-            _ctx.font = "22px Playfair Display, serif";
-            if (!isIG) {
-                let quote = _quote.value;
-                if (quote == '')
-                quote = 'Your quote...';
-
-                let val = "“" + quote + "”",
-                    q_lines = wrapText(val, 315);
-
-                for (var i=0; i < q_lines.length; i++) {
-                    let y = 130; //calculate y position from _theme y position + height
-                    if (st_lines.length > 0)
-                        y = y + (st_lines.length * 48);
-                    if (i > 0)
-                        y = y + (i * 32);
-                    _ctx.fillText(q_lines[i], x, y);    
-                }
-            }
-            
-            if (!isIG)
-                _ctx.fillText("#HerImpact #EndHunger", _dims.W - pane_w + TEXT_INDENT, _dims.H - CANVAS_BORDER_WIDTH - 40);
-
-            _ctx.stroke();
+            break;
+          }
         }
-    },
 
-    getMousePos = (evt) => {
-        let rect = _canvas.getBoundingClientRect();
-        return {
-            x: evt.clientX - rect.left,
-            y: evt.clientY - rect.top
+        _ctx.fillText(st_lines[i], x, y);
+      }
+    } else if (st_lines.length == 1) {
+      var word = '';
+
+      for (var theme in THEMES) {
+        var pos = st_lines[0].indexOf(theme);
+
+        if (pos >= 0) {
+          word = theme;
+          st_lines[0] = st_lines[0].substring(0, pos);
+          break;
+        }
+      }
+
+      _ctx.fillText(st_lines[0], x, y);
+
+      var temp_x = x + _ctx.measureText(st_lines[0]).width;
+
+      _ctx.fillStyle = "rgb(210,63,97)";
+
+      var _w_w = _ctx.measureText(word).width;
+
+      _ctx.fillRect(temp_x - 5, y - 23, _w_w + 15, 26);
+
+      _ctx.fillStyle = "#ffffff";
+      _ctx.font = "Italic " + fs + "px Playfair Display, serif";
+
+      _ctx.fillText(word, temp_x, y);
+    }
+
+    _ctx.fillStyle = "#ffffff";
+    _ctx.font = "22px Playfair Display, serif";
+
+    if (!isIG) {
+      var quote = _quote.value;
+      if (quote == '') quote = 'Your quote...';
+      var val = "“" + quote + "”",
+          q_lines = wrapText(val, 315);
+
+      for (var i = 0; i < q_lines.length; i++) {
+        var _y2 = 130; //calculate y position from _theme y position + height
+
+        if (st_lines.length > 0) _y2 = _y2 + st_lines.length * 48;
+        if (i > 0) _y2 = _y2 + i * 32;
+
+        _ctx.fillText(q_lines[i], x, _y2);
+      }
+    }
+
+    if (!isIG) _ctx.fillText("#HerImpact #EndHunger", _dims.W - pane_w + TEXT_INDENT, _dims.H - CANVAS_BORDER_WIDTH - 40);
+
+    _ctx.stroke();
+  }
+},
+    getMousePos = function getMousePos(evt) {
+  var rect = _canvas.getBoundingClientRect();
+
+  return {
+    x: evt.clientX - rect.left,
+    y: evt.clientY - rect.top
+  };
+},
+    isImageSelected = function isImageSelected() {
+  var bb = _canvas.getBoundingClientRect(),
+      ratio = (bb.width - 2) / _dims.W,
+      i_x = _imageX * ratio,
+      i_y = _imageY * ratio,
+      c_w = _currImageW * ratio,
+      c_y = _currImageH * ratio;
+
+  return _mousePos && _mousePos.x >= i_x && _mousePos.x <= c_w + i_x && _mousePos.y >= i_y && _mousePos.y <= c_y + i_y;
+},
+    wrapText = function wrapText(text, maxWidth) {
+  var words = text.split(' '),
+      lines = [],
+      line = "";
+
+  if (_ctx.measureText(text).width < maxWidth) {
+    return [text];
+  }
+
+  while (words.length > 0) {
+    while (_ctx.measureText(words[0]).width >= maxWidth) {
+      var tmp = words[0];
+      words[0] = tmp.slice(0, -1);
+
+      if (words.length > 1) {
+        words[1] = tmp.slice(-1) + words[1];
+      } else {
+        words.push(tmp.slice(-1));
+      }
+    }
+
+    if (_ctx.measureText(line + words[0]).width < maxWidth) {
+      line += words.shift() + " ";
+    } else {
+      lines.push(line);
+      line = "";
+    }
+
+    if (words.length === 0) {
+      lines.push(line);
+    }
+  }
+
+  return lines;
+},
+    videoLoaded = function videoLoaded() {
+  if (_video.readyState == 4) {
+    document.querySelector('x-hero').classList.add('ready');
+    clearInterval(_interval);
+  }
+},
+    isFormValid = function isFormValid() {
+  if (_btnDownload && _imageUploaded && _fullName.value != '' && (_imageRatio.value == 'instagram' || _quote.value != '')) {
+    _btnDownload.removeAttribute('disabled');
+  } else {
+    _btnDownload.setAttribute('disabled', true);
+  }
+};
+
+window.onload = function () {
+  /* landing page */
+  _dialog = document.querySelector('dialog');
+
+  if (_dialog) {
+    _video = document.querySelector('video');
+    _interval = setInterval(function () {
+      videoLoaded(_video, _interval);
+    }, 500);
+    _bios = document.querySelectorAll('x-bios x-bio');
+    _overlay = document.querySelector('x-overlay');
+    _dialogNav = _dialog.querySelector('nav');
+
+    _bios.forEach(function (bio, index) {
+      var btns = bio.querySelectorAll('a,div.image-wrapper');
+      btns.forEach(function (btn) {
+        btn.onclick = function (e) {
+          _currBioIdx = index + 1;
+          showDialog();
         };
-    },
-    
-    isImageSelected = () => {
-        let bb = _canvas.getBoundingClientRect(),
-            ratio = (bb.width - 2) / _dims.W,
-            i_x = _imageX * ratio,
-            i_y = _imageY * ratio,
-            c_w = _currImageW * ratio,
-            c_y = _currImageH * ratio;
+      });
+    });
 
-        return (_mousePos && (_mousePos.x >= i_x && _mousePos.x <= (c_w + i_x)) && (_mousePos.y >= i_y && _mousePos.y <= (c_y + i_y)));
-    },
-    
-    wrapText = (text, maxWidth) => {
-        var words = text.split(' '),
-            lines = [],
-            line = "";
-
-        if (_ctx.measureText(text).width < maxWidth) {
-            return [text];
-        }
-
-        while (words.length > 0) {
-            while (_ctx.measureText(words[0]).width >= maxWidth) {
-                var tmp = words[0];
-                words[0] = tmp.slice(0, -1);
-                if (words.length > 1) {
-                    words[1] = tmp.slice(-1) + words[1];
-                } else {
-                    words.push(tmp.slice(-1));
-                }
-            }
-            if (_ctx.measureText(line + words[0]).width < maxWidth) {
-                line += words.shift() + " ";
-            } else {
-                lines.push(line);
-                line = "";
-            }
-            if (words.length === 0) {
-                lines.push(line);
-            }
-        }
-        return lines;
-    },
-    
-    videoLoaded = () => {
-        if (_video.readyState == 4) {
-            document.querySelector('x-hero').classList.add('ready');
-            clearInterval(_interval);
-        }
+    document.onkeyup = function (e) {
+      if (e.key === "Escape" && _dialog.style.display == 'block') {
+        closeDialog();
+      }
     };
+  }
+  /* animate squiggles (landing page) */
 
-window.onload = () => {
-    /* landing page */
-    _dialog = document.querySelector('dialog');
-    if (_dialog) {
-        _video = document.querySelector('video');
-        _interval = setInterval(() => {
-            videoLoaded(_video, _interval)
-        }, 500);
 
-        _bios = document.querySelectorAll('x-bios x-bio');
-        _overlay = document.querySelector('x-overlay');
-        _dialogNav = _dialog.querySelector('nav');
+  _squiggles = document.querySelectorAll('span.squiggle-divider');
+  _facts = document.querySelector('x-facts');
 
-        _bios.forEach((bio, index) => {
-            let btns = bio.querySelectorAll('a,div.image-wrapper');
-            btns.forEach((btn) => {
-                btn.onclick = (e) => {
-                    _currBioIdx = index + 1;
-                    showDialog();
-                }
-            });
-        });
-        document.onkeyup = (e) => {
-            if (e.key === "Escape" && _dialog.style.display == 'block') {
-                closeDialog();
-            }
-        };
-    }
+  if (_squiggles && _facts) {
+    window.onscroll = function () {
+      var w_h = window.innerHeight;
 
-    /* animate squiggles (landing page) */
-    _squiggles = document.querySelectorAll('span.squiggle-divider');
-    _facts = document.querySelector('x-facts');
-    if (_squiggles && _facts) {
-        window.onscroll = () => {
-            let w_h = window.innerHeight;
+      _squiggles.forEach(function (squiggle) {
+        var _squiggle$getBounding = squiggle.getBoundingClientRect(),
+            top = _squiggle$getBounding.top;
 
-            _squiggles.forEach((squiggle) => {
-                let {top} = squiggle.getBoundingClientRect();
-                if (top > 0 && top < w_h) {
-                    squiggle.classList.add('animate');
-                } else {
-                    squiggle.classList.remove('animate');
-                }
-            });
+        if (top > 0 && top < w_h) {
+          squiggle.classList.add('animate');
+        } else {
+          squiggle.classList.remove('animate');
+        }
+      });
 
-            if (_facts.className.indexOf('animate') == -1) {
-                let {top} = _facts.getBoundingClientRect();
-                if (top > 0 && top < w_h) {
-                    _facts.classList.add('animate');
-                }
-            }
-        };
-    }
+      if (_facts.className.indexOf('animate') == -1) {
+        var _facts$getBoundingCli = _facts.getBoundingClientRect(),
+            top = _facts$getBoundingCli.top;
 
-    /** uploader tool */
-    _canvas = document.querySelector('canvas');
-    if (_canvas) {
-        _file = document.getElementById('file');
-        _btnDownload = document.getElementById('btnDownload');
-        _canvasWrapper = document.querySelector('section.canvas-wrapper');
-        _ctx = _canvas.getContext('2d');
-        _zoomIn = document.querySelector('button.zoom-in');
-        _zoomOut = document.querySelector('button.zoom-out');
-        _slider = document.getElementById('sliderZoom');
-        _theme = document.getElementById('ddlTheme');
-        _fullName = document.getElementById('txtFullName');
-        _career = document.getElementById('txtCareer');
-        _imageRatio = document.getElementById('ddlImageRatio');
-        _quote = document.getElementById('txtQuote');
-        _charCount = document.getElementById('lblCharCount');
-        _quoteContainer = document.getElementById('xfQuote');
+        if (top > 0 && top < w_h) {
+          _facts.classList.add('animate');
+        }
+      }
+    };
+  }
+  /** uploader tool */
 
-        _dims = CANVAS_DIMS[_imageRatio.value];
 
+  _canvas = document.querySelector('canvas');
+
+  if (_canvas) {
+    _file = document.getElementById('file');
+    _btnDownload = document.getElementById('btnDownload');
+    _canvasWrapper = document.querySelector('section.canvas-wrapper');
+    _ctx = _canvas.getContext('2d');
+    _zoomIn = document.querySelector('button.zoom-in');
+    _zoomOut = document.querySelector('button.zoom-out');
+    _slider = document.getElementById('sliderZoom');
+    _theme = document.getElementById('ddlTheme');
+    _fullName = document.getElementById('txtFullName');
+    _career = document.getElementById('txtCareer');
+    _imageRatio = document.getElementById('ddlImageRatio');
+    _quote = document.getElementById('txtQuote');
+    _charCount = document.getElementById('lblCharCount');
+    _quoteContainer = document.getElementById('xfQuote');
+    _imageUploadErr = document.getElementById('lblErrorUpload');
+    _dims = CANVAS_DIMS[_imageRatio.value];
+    _canvas.width = _dims.W;
+    _canvas.height = _dims.H; //input fields `onchange` events
+
+    _theme.addEventListener('change', function () {
+      draw();
+    });
+
+    _fullName.addEventListener('change', function () {
+      isFormValid();
+      draw();
+    });
+
+    _career.addEventListener('change', function () {
+      draw();
+    });
+
+    _imageRatio.addEventListener('change', function (e) {
+      var val = e.target.value;
+
+      if (val == 'instagram') {
+        _fpo.src = 'img/FPO-image-IG.jpg';
+
+        _canvasWrapper.classList.add('instagram');
+
+        _quoteContainer.style.display = 'none';
+      } else {
+        _fpo.src = 'img/FPO-image.jpg';
+
+        _canvasWrapper.classList.remove('instagram');
+
+        _quoteContainer.style.display = 'block';
+      }
+
+      _dims = CANVAS_DIMS[val];
+
+      if (_dims) {
         _canvas.width = _dims.W;
         _canvas.height = _dims.H;
 
-        //input fields `onchange` events
-        _theme.addEventListener('change', () => { draw(); });
+        if (!_imageUploaded) {
+          _fpo.onload = function () {
+            isFormValid();
+            draw();
+          };
+        } else {
+          isFormValid();
+          draw();
+        }
+      }
+    });
 
-        _fullName.addEventListener('change', () => { draw(); });
+    _quote.addEventListener('keyup', function (e) {
+      _charCount.innerHTML = e.target.value.length;
+    });
 
-        _career.addEventListener('change', () => { draw(); });
+    _quote.addEventListener('change', function () {
+      isFormValid();
+      if (_imageRatio.value != 'instagram') draw();
+    });
 
-        _imageRatio.addEventListener('change', (e) => {
-            let val = e.target.value;
+    _canvas.addEventListener('mousemove', function (evt) {
+      if (_imageUploaded) {
+        _mousePos = getMousePos(evt);
 
-            if (val == 'instagram') {
-                _fpo.src = '/wp-content/uploads/2019/09/FPO-image-IG.jpg';
-                _canvasWrapper.classList.add('instagram');
-                _quoteContainer.style.display = 'none';
-            } else {
-                _fpo.src = '/wp-content/uploads/2019/09/FPO-image.jpg';
-                _canvasWrapper.classList.remove('instagram');
-                _quoteContainer.style.display = 'block';
-            }
+        if (isImageSelected()) {
+          document.body.style.cursor = 'move';
 
-            _dims = CANVAS_DIMS[val];
-            if (_dims) {
-                _canvas.width = _dims.W;
-                _canvas.height = _dims.H;
-                _fpo.onload = () => {
-                    draw();
-                };
-            }
-        });
+          if (_moveImage && _preMousePos) {
+            _imageX = _imageX + (_mousePos.x - _preMousePos.x);
+            _imageY = _imageY + (_mousePos.y - _preMousePos.y);
+            _preMousePos = _mousePos;
+            draw();
+          }
+        } else {
+          document.body.style.cursor = 'pointer';
+        }
+      }
+    }, false);
 
-        _quote.addEventListener('keyup', (e) => {
-            _charCount.innerHTML = e.target.value.length;
-        });
+    _canvas.addEventListener('mouseout', function (evt) {
+      document.body.style.cursor = 'pointer';
+    });
 
-        _quote.addEventListener('change', () => {
-            if (_imageRatio.value != 'instagram')
-                draw();
-        });
+    _canvas.addEventListener('mousedown', function (evt) {
+      if (_imageUploaded && isImageSelected()) {
+        _moveImage = true;
+        _preMousePos = _mousePos;
+      }
+    }, false);
 
-        _canvas.addEventListener('mousemove', (evt) => {
-            if (_imageUploaded) {
-                _mousePos = getMousePos(evt);
-                if (isImageSelected()) {
-                    document.body.style.cursor = 'move';
+    _canvas.addEventListener('mouseup', function (evt) {
+      _moveImage = false;
+      _preMousePos = undefined;
+    }, false);
 
-                    if (_moveImage && _preMousePos) {
-                        _imageX = _imageX + (_mousePos.x - _preMousePos.x);
-                        _imageY = _imageY + (_mousePos.y - _preMousePos.y);
-                        _preMousePos = _mousePos;
-                        draw();
-                    }
-                } else {
-                    document.body.style.cursor = 'pointer';
-                }
-            }
-        }, false);
+    _zoomIn.addEventListener('click', function () {
+      if (_imageUploaded && _zoom + ZOOM_INC <= ZOOM_MAX) {
+        _zoom += ZOOM_INC;
+        _isZoom = true;
+        draw();
+      }
+    });
 
-        _canvas.addEventListener('mouseout', (evt) => {
-            document.body.style.cursor = 'pointer';
-        });
+    _zoomOut.addEventListener('click', function () {
+      if (_imageUploaded && _zoom - ZOOM_INC > 0) {
+        _zoom -= ZOOM_INC;
+        _isZoom = true;
+        draw();
+      }
+    });
 
-        _canvas.addEventListener('mousedown', (evt) => {
-            if (_imageUploaded && isImageSelected()) {
-                _moveImage = true;
-                _preMousePos = _mousePos;
-            }
-        }, false);
+    _slider.addEventListener('change', function (e) {
+      if (_imageUploaded) {
+        _zoom = e.target.value;
+        draw();
+      }
+    }); //upload image
 
-        _canvas.addEventListener('mouseup', (evt) => {
-            _moveImage = false;
-            _preMousePos = undefined;
-        }, false);
 
-        _zoomIn.addEventListener('click', () => {
-            if (_imageUploaded && (_zoom + ZOOM_INC) <= ZOOM_MAX) {
-                _zoom += ZOOM_INC;
-                _isZoom = true;
-                draw();
-            }
-        });
+    _file.onchange = function () {
+      var fr = new FileReader();
 
-        _zoomOut.addEventListener('click', () => {
-            if (_imageUploaded && _zoom - ZOOM_INC > 0) {
-                _zoom -= ZOOM_INC;
-                _isZoom = true;
-                draw();
-            }
-        });
+      fr.onload = function (event) {
+        _firstDraw = true;
+        _theImage = new Image();
 
-        _slider.addEventListener('change', (e) => {
-            if (_imageUploaded) {
-                _zoom = e.target.value;
-                draw();
-            }
-        });
-
-        //upload image
-        _file.onchange = () => {
-            let fr = new FileReader();
-            fr.onload = (event) => {
-                _firstDraw = true;
-                _theImage = new Image();
-                _theImage.onload = () => {
-                    _imageUploaded = true;
-                    draw();
-                };
-                _theImage.src = event.target.result;
-            };
-            if (_file.files[0])
-                fr.readAsDataURL(_file.files[0]);
+        _theImage.onload = function (e) {
+          _imageUploaded = true;
+          _imageUploadErr.style.display = 'none';
+          isFormValid();
+          draw();
         };
 
-        //download image (save from canvas)
-        _btnDownload.onclick = () => {
-            if (_imageUploaded) {
-                let dataURL = _canvas.toDataURL('image/jpeg');
-                var link = document.createElement("a");
-                link.download = "FeedTheFuture-" + _imageRatio.value + "-" + CANVAS_DIMS[_imageRatio.value].W + 'x' + CANVAS_DIMS[_imageRatio.value].H + ".jpg";
-                link.href = dataURL;
-                link.click();
-            }
+        _theImage.onerror = function (e) {
+          _imageUploadErr.innerHTML = "Error uploading file - please check image file type (jpg, jpeg, png, svg, etc) and try again.";
+          _imageUploadErr.style.display = 'block';
         };
 
-        initPhotoUploader();
-    }
+        _theImage.src = event.target.result;
+      };
+
+      if (_file.files[0]) fr.readAsDataURL(_file.files[0]);
+    }; //download image (save from canvas)
+
+
+    _btnDownload.onclick = function () {
+      if (_imageUploaded) {
+        var dataURL = _canvas.toDataURL('image/jpeg');
+
+        var link = document.createElement("a");
+        link.download = "FeedTheFuture-" + _imageRatio.value + "-" + CANVAS_DIMS[_imageRatio.value].W + 'x' + CANVAS_DIMS[_imageRatio.value].H + ".jpg";
+        link.href = dataURL;
+        link.click();
+      }
+    };
+
+    initPhotoUploader();
+  }
 };
 </script>
+
+  <script>
+/*!--------------------------------------------------------------------
+JAVASCRIPT "Outdated Browser"
+Version:    1.1.2 - 2015
+author:     Burocratik
+website:    http://www.burocratik.com
+* @preserve
+-----------------------------------------------------------------------*/
+var outdatedBrowser = function(options) {
+
+    //Variable definition (before ajax)
+    var outdated = document.getElementById("outdated");
+
+    // Default settings
+    this.defaultOpts = {
+        bgColor: '#f25648',
+        color: '#ffffff',
+        lowerThan: 'IE11',
+        languagePath: '../outdatedbrowser/lang/en.html'
+    }
+
+    if (options) {
+        //assign css3 property or js property to IE browser version
+        if (options.lowerThan == 'IE8' || options.lowerThan == 'borderSpacing') {
+            options.lowerThan = 'borderSpacing';
+        } else if (options.lowerThan == 'IE9' || options.lowerThan == 'boxShadow') {
+            options.lowerThan = 'boxShadow';
+        } else if (options.lowerThan == 'IE10' || options.lowerThan == 'transform' || options.lowerThan == '' || typeof options.lowerThan === "undefined") {
+            options.lowerThan = 'transform';
+        } else if (options.lowerThan == 'IE11' || options.lowerThan == 'borderImage') {
+            options.lowerThan = 'borderImage';
+        }  else if (options.lowerThan == 'Edge' || options.lowerThan == 'js:Promise') {
+            options.lowerThan = 'js:Promise';
+        }
+
+        //all properties
+        this.defaultOpts.bgColor = options.bgColor;
+        this.defaultOpts.color = options.color;
+        this.defaultOpts.lowerThan = options.lowerThan;
+        this.defaultOpts.languagePath = options.languagePath;
+
+        bkgColor = this.defaultOpts.bgColor;
+        txtColor = this.defaultOpts.color;
+        cssProp = this.defaultOpts.lowerThan;
+        languagePath = this.defaultOpts.languagePath;
+    } else {
+        bkgColor = this.defaultOpts.bgColor;
+        txtColor = this.defaultOpts.color;
+        cssProp = this.defaultOpts.lowerThan;
+        languagePath = this.defaultOpts.languagePath;
+    } //end if options
+
+
+    //Define opacity and fadeIn/fadeOut functions
+    var done = true;
+
+    function function_opacity(opacity_value) {
+        outdated.style.opacity = opacity_value / 100;
+        outdated.style.filter = 'alpha(opacity=' + opacity_value + ')';
+    }
+
+    // function function_fade_out(opacity_value) {
+    //     function_opacity(opacity_value);
+    //     if (opacity_value == 1) {
+    //         outdated.style.display = 'none';
+    //         done = true;
+    //     }
+    // }
+
+    function function_fade_in(opacity_value) {
+        function_opacity(opacity_value);
+        if (opacity_value == 1) {
+            outdated.style.display = 'block';
+        }
+        if (opacity_value == 100) {
+            done = true;
+        }
+    }
+
+    //check if element has a particular class
+    // function hasClass(element, cls) {
+    //     return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+    // }
+
+    var supports = ( function() {
+        var div = document.createElement('div');
+        var vendors = 'Khtml Ms O Moz Webkit'.split(' ');
+        var len = vendors.length;
+
+        return function(prop) {
+            if (prop in div.style) return true;
+
+            prop = prop.replace(/^[a-z]/, function(val) {
+                return val.toUpperCase();
+            });
+
+            while (len--) {
+                if (vendors[len] + prop in div.style) {
+                    return true;
+                }
+            }
+            return false;
+        };
+    } )();
+
+    var validBrowser = false;
+
+    // browser check by js props
+    if(/^js:+/g.test(cssProp)) {
+        var jsProp = cssProp.split(':')[1];
+        if(!jsProp)
+            return;
+
+        switch (jsProp) {
+      case 'Promise':
+                validBrowser = window.Promise !== undefined && window.Promise !== null && Object.prototype.toString.call(window.Promise.resolve()) === '[object Promise]';
+                break;
+            default:
+                validBrowser = false;
+    }
+    } else {
+        // check by css3 property (transform=default)
+        validBrowser = supports('' + cssProp + '');
+    }
+
+
+  if (!validBrowser) {
+    if (done && outdated.style.opacity !== '1') {
+      done = false;
+      for (var i = 1; i <= 100; i++) {
+        setTimeout((function (x) {
+          return function () {
+            function_fade_in(x);
+          };
+        })(i), i * 8);
+      }
+    }
+  } else {
+        return;
+    } //end if
+
+
+    //Check AJAX Options: if languagePath == '' > use no Ajax way, html is needed inside <div id="outdated">
+    if (languagePath === ' ' || languagePath.length == 0) {
+        startStylesAndEvents();
+    } else {
+        grabFile(languagePath);
+    }
+
+    //events and colors
+    function startStylesAndEvents() {
+        var btnClose = document.getElementById("btnCloseUpdateBrowser");
+        var btnUpdate = document.getElementById("btnUpdateBrowser");
+
+        //check settings attributes
+        outdated.style.backgroundColor = bkgColor;
+        //way too hard to put !important on IE6
+        outdated.style.color = txtColor;
+        outdated.children[0].style.color = txtColor;
+        outdated.children[1].style.color = txtColor;
+
+        //check settings attributes
+        btnUpdate.style.color = txtColor;
+        // btnUpdate.style.borderColor = txtColor;
+        if (btnUpdate.style.borderColor) {
+            btnUpdate.style.borderColor = txtColor;
+        }
+        btnClose.style.color = txtColor;
+
+        //close button
+        btnClose.onmousedown = function() {
+            outdated.style.display = 'none';
+            return false;
+        };
+
+        //Override the update button color to match the background color
+        btnUpdate.onmouseover = function() {
+            this.style.color = bkgColor;
+            this.style.backgroundColor = txtColor;
+        };
+        btnUpdate.onmouseout = function() {
+            this.style.color = txtColor;
+            this.style.backgroundColor = bkgColor;
+        };
+    } //end styles and events
+
+
+    // IF AJAX with request ERROR > insert english default
+    var ajaxEnglishDefault = '<h6>Your browser is out-of-date!</h6>'
+        + '<p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>'
+        + '<p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>';
+
+
+    //** AJAX FUNCTIONS - Bulletproof Ajax by Jeremy Keith **
+    function getHTTPObject() {
+        var xhr = false;
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            try {
+                xhr = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch ( e ) {
+                try {
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch ( e ) {
+                    xhr = false;
+                }
+            }
+        }
+        return xhr;
+    }//end function
+
+    function grabFile(file) {
+        var request = getHTTPObject();
+        if (request) {
+            request.onreadystatechange = function() {
+                displayResponse(request);
+            };
+            request.open("GET", file, true);
+            request.send(null);
+        }
+        return false;
+    } //end grabFile
+
+    function displayResponse(request) {
+        var insertContentHere = document.getElementById("outdated");
+        if (request.readyState == 4) {
+            if (request.status == 200 || request.status == 304) {
+                insertContentHere.innerHTML = request.responseText;
+            } else {
+                insertContentHere.innerHTML = ajaxEnglishDefault;
+            }
+            startStylesAndEvents();
+        }
+        return false;
+    }//end displayResponse
+
+////////END of outdatedBrowser function
+};
+</script>
+
+<script>
+outdatedBrowser({
+    bgColor: '#f25648',
+    color: '#ffffff',
+    lowerThan: 'IE11',
+    languagePath: ''
+})
+</script>
+
 
     </main>
 
